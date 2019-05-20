@@ -1,0 +1,12 @@
+AUC: 0.670
+DSMI AUC: 0.734
+FCE AUC: 0.718
+BOTH AUC: 0.967
+all EER = 0.388
+dsmi EER = 0.327
+fce EER = 0.355
+both EER = 0.097
+All d' = 0.424
+DSMI d' = 0.684
+FCE d' = 0.552
+Both d' = 2.031
