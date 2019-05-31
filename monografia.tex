@@ -7,25 +7,30 @@
 %  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
 
 % \documentclass[engenharia]{UnB-CIC}%
-\documentclass[qualificacao,mestrado,ppca]{UnB-CIC}%
+\documentclass[engenharia]{UnB-CIC}%
 
-\usepackage{pdfpages}% incluir PDFs, usado no apêndice
+\usepackage{pdfpages}% incluir PDFs, usado no apêndice\par A fórmula é aplicada para cada \textit{pixel} da imagem de entrada. Aonde $g_{c}$ é o valor do \textit{pixel} central da vizinhança sendo calculada, $g_{p}$ o valor do \textit{pixel} dos vizinhos, \textit{P} o total de vizinhos e R o raio da vizinhança. As coordenadas de $g_{p}$ são calculadas pela fórmula ($Rcos(2\pip/P)$, $Rsen(2\pip/P)$). 
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Informações do Trabalho
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\orientador{\prof \dr Guilherme Novaes Ramos}{CIC/UnB}%
+\orientador{\prof \dr Bruno Luiggi Macchiavello Espinoza}{CIC/UnB}%
 %\coorientador{\prof \dr José Ralha}{CIC/UnB}
-\coordenador[a]{\prof[a] \dr[a] Ada Lovelace}{Bibliothèque universelle de Genève}%
-\diamesano{24}{dezembro}{2014}%
+\coordenador{\prof \dr José Edil Guimarães de Medeiros}{Universidade de Brasília}%
+\diamesano{X}{junho/julho}{2019}%
 
 \membrobanca{\prof \dr Donald Knuth}{Stanford University}%
 \membrobanca{\dr Leslie Lamport}{Microsoft Research}%
 
-\autor{Guilherme N.}{Ramos}%
+\autor{Victor Araújo}{Vieira}%
 
-\titulo{UnB-CIC: Uma classe em LaTeX para textos do Departamento de Ciência da Computação}%
+\titulo{Métricas de Qualidade Aplicadas em Sistemas de Reconhecimento de Íris}%
 
 \palavraschave{LaTeX, metodologia científica, trabalho de conclusão de curso}%
 \keywords{LaTeX, scientific method, thesis}%
@@ -37,9 +42,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}%
     \capitulo{1_Introducao}{Introdução}%
-    \capitulo{2_UnB-CIC}{A Classe \unbcic}%
-    \capitulo{3_TCC}{Trabalho de Conclusão de Curso}%
-    \capitulo{4_Apresentacao}{Apresentações}%
+    \capitulo{2_Fundamentacao}{Fundamentação Teórica}%
+    \capitulo{3_Revisao}{Revisão Bibliográfica}%
+    \capitulo{4_Metodologia}{Metodologia}%
+    \capitulo{5_Experimentos}{Experimentos}%
+    \capitulo{6_Conclusao}{Conclusão}%
 
     \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
     \anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%

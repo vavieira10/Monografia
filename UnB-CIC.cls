@@ -944,6 +944,60 @@
 		\end{center}%
 	\end{figure}%
 }%
+
+% Ordem dos argumentos:
+% {h!}{imagem1}{imagem2}{captionGeral}{caption1}{caption2}{labelGeral}{label1}{{label2}{tamanhoGeral}{tamanhoPequenas}{fonte1}{fonte2}}
+
+\newcommand{\figurasDuplas}[9]{%
+    \def\tempa{#1}%
+    \def\tempb{#2}%
+    \def\tempc{#3}%
+    \def\tempd{#4}%
+    \def\tempe{#5}%
+    \def\tempf{#6}%
+    \def\tempg{#7}%
+    \def\temph{#8}%
+    \figurasDuplasContinued#9
+}
+
+\newcommand{\figurasDuplasContinued}[3]{%
+    % Do whatever you want with your 8+5 arguments here.
+    \begin{figure}[\tempa]
+    \centering
+        \begin{subfigure}{#2}
+          \centering
+          \includegraphics[#3]{\tempb}
+        %   \caption[\tempe.]{\tempe\ifx#4\empty\else~(Fonte: ~\cite{#4})\fi.\label{\temph}
+          \caption{\tempe.}\label{\temph}
+        \end{subfigure}%
+        \begin{subfigure}{#2}
+          \centering
+          \includegraphics[#3]{\tempc}
+        %   \caption[\tempf.]{\tempf\ifx#5\empty\else~(Fonte: ~\cite{#5})\fi.\label{#1}
+          \caption{\tempf.}\label{#1}
+        \end{subfigure}
+        \caption{\tempd}
+        \label{\tempg}
+    \end{figure}%
+}
+
+% \newcommand{\figurasDuplas}[9][!ht]{%
+%     \def\temp1{#1}%
+%     \def\temp2{#2}%
+%     \def\temp3{#3}%
+%     \def\temp4{#4}%
+%     \def\temp5{#5}%
+%     \def\temp6{#6}%
+%     \def\temp7{#7}%
+%     \def\temp8{#8}%
+%     \figurasDuplasContinued#9
+% }%
+
+% \newcommand{\figurasDuplasContinued}[3][!ht]{%
+% 	\figurasDuplasBib{\temp1}{\temp2}{\temp3}{\temp4}{\temp5}{\temp6}{\temp7}{\temp8}{{#1}{#2}{#3}{}{}}%
+% }%
+
+
 \newcommand{\figura}[5][!ht]{%
 	\figuraBib[#1]{#2}{#3}{}{#4}{#5}%
 }%
