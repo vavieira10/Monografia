@@ -105,7 +105,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par Cada um dos blocos do diagrama apresentado na \refFig{fig:sis_bio:arquitetura} são explicados nas Seções \ref{sec:sis_bio:coleta} até \ref{sec:sis_bio:decisao}.
 
-\figura[h!]{img/arquitetura_biometria}{Arquitetura de um sistema biométrico genérico}{fig:sis_bio:arquitetura}{width=1\textwidth}
+\figura[h!]{img/Fundamentacao/Fundamentacao/arquitetura_biometria}{Arquitetura de um sistema biométrico genérico}{fig:sis_bio:arquitetura}{width=1\textwidth}
 
 \subsection{Coleta} \label{sec:sis_bio:coleta}
 
@@ -113,7 +113,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e formato das mãos, respectivamente.
 
-\figurasDuplas{h!}{img/fingerprint_sensor}{img/hand_sensor}{Sensores biométricos de impressão digital e formato das mãos}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{Schlage HandPunch HP2000E} (Fonte: \cite{hand_sensor})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:hand}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{h!}{img/Fundamentacao/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/hand_sensor}{Sensores biométricos de impressão digital e formato das mãos}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{Schlage HandPunch HP2000E} (Fonte: \cite{hand_sensor})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:hand}{.5\textwidth}{width=.5\textwidth}}
 
 \subsection{Transmissão}\label{sec:sis_bio:transmissao}
 
@@ -174,18 +174,18 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par Com a probabilidade de 1 em $10^{72}$ de existirem padrões de íris iguais e não modificarem ao longo da vida, é considerada um dos melhores tipos de biometria \cite{iris_UFRJ}.
 
-\figurasDuplas{h!}{img/iris_direita}{img/iris_esquerda}{Diferança das íris do olho humano}{Íris do olho direito}{íris do olho esquerdo}{fig:olhos}{fig:iris_direita}{{fig:iris_esquerda}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{h!}{img/Fundamentacao/iris_direita}{img/Fundamentacao/iris_esquerda}{Diferança das íris do olho humano}{Íris do olho direito}{íris do olho esquerdo}{fig:olhos}{fig:iris_direita}{{fig:iris_esquerda}{.5\textwidth}{width=.5\textwidth}}
 
 % \begin{figure}[h!]
 % \centering
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/iris_direita}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_direita}
 %   \caption{Íris do olho direito.}\label{fig:iris_direita}
 % \end{subfigure}%
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/iris_esquerda}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_esquerda}
 %   \caption{Íris do olho esquerdo.}\label{fig:iris_esquerda}
 % \end{subfigure}
 % \caption{Diferença das íris do olho humano.}
@@ -195,12 +195,12 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 % \begin{figure}[!h]
 %   \centering
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/iris_direita.jpg}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_direita.jpg}
 %     \caption{Íris do olho direito.}\label{fig:iris_direita}
 %   \end{minipage}
 %   \hfill
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/iris_esquerda.jpg}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_esquerda.jpg}
 %     \caption{Íris do olho esquerdo.}\label{fig:iris_esquerda}
 %   \end{minipage}
 % \end{figure}
@@ -218,20 +218,20 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par Imagens \textit{\arcshort{VL}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{VL}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
 
-\figurasDuplas{ht!}{img/iris_vl_escura}{img/iris_vl_clara}{Imagens de íris \textit{\acrshort{VL}}}{Pigmentação escura}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{VL}}}{Pigmentação escura}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.5\textwidth}}
 
-\figura[ht!]{img/iris_nir}{Imagem de íris \textit{\arcshort{NIR}}}{fig:iris_nir}{width=0.3\textwidth}%
+\figura[ht!]{img/Fundamentacao/iris_nir}{Imagem de íris \textit{\arcshort{NIR}}}{fig:iris_nir}{width=0.3\textwidth}%
 
 % \begin{figure}[h!]
 % \centering
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/iris_vl_escura}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_vl_escura}
 %   \caption{Pigmentação escura.}\label{fig:iris_vl_escura}
 % \end{subfigure}%
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/iris_vl_clara}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_vl_clara}
 %   \caption{Pigmentação clara.}\label{fig:iris_vl_clara}
 % \end{subfigure}
 % \caption{Imagens de íris \textit{\acrshort{VL}}.}
@@ -241,12 +241,12 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 % \begin{figure}[h!]
 %   \centering
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/iris_vl_escura.jpg}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_vl_escura.jpg}
 %     \caption{Imagem de íris \textit{\arcshort{VL}} com pigmentação escura.} \label{fig:iris_vl_escura}
 %   \end{minipage}
 %   \hfill
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/iris_vl_clara.jpg}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_vl_clara.jpg}
 %     \caption{Imagem de íris \textit{\arcshort{VL}} com pigmentação clara.}\label{fig:iris_vl_clara}
 %   \end{minipage}
 % \end{figure}
@@ -320,19 +320,19 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. A \refFig{fig:stdfilt:entrada} ilustra uma imagem de entrada e a \refFig{fig:filtros} os resultados da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
 
-\figura[!h]{img/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
+\figura[!h]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
 
-\figurasDuplas{h!}{img/stdfilt_std}{img/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{h!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.5\textwidth}}
 
 % \begin{figure}[!h]
 %   \centering
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/stdfilt_std}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/stdfilt_std}
 %     \caption{Resultado da filtragem pelo filtro \textit{Desvio Padrão Local}}\label{fig:stdfilt:std}
 %   \end{minipage}
 %   \hfill
 %   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/stdfilt_var}
+%     \includegraphics[width=\textwidth]{img/Fundamentacao/stdfilt_var}
 %     \caption{Resultado da filtragem pelo filtro \textit{Variância Local}}\label{fig:stdfilt:var}
 %   \end{minipage}
 % \end{figure}
@@ -369,18 +369,18 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par Sua principal aplicação é em processamento de imagens, e consiste em binarizar imagens em escala de cinza. A binarização é feita calculando o histograma da imagem e então encontrando o limiar (intensidade de \textit{pixel}) que melhor separa o fundo e o primeiro plano das imagens \cite{gonsalez2006}. A \refFig{fig:otsu} ilustra imagens antes e depois da binarização utilizando o método \textit{Otsu}.
 
-\figurasDuplas{h!}{img/stdfilt_entrada}{img/otsu_binaria}{Processo de binarização de imagens utilizando o método \textit{Otsu}}{Imagem original}{Imagem binarizada}{fig:otsu}{fig:otsu:org}{{fig:otsu:bin}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{h!}{img/Fundamentacao/stdfilt_entrada}{img/Fundamentacao/otsu_binaria}{Processo de binarização de imagens utilizando o método \textit{Otsu}}{Imagem original}{Imagem binarizada}{fig:otsu}{fig:otsu:org}{{fig:otsu:bin}{.5\textwidth}{width=.5\textwidth}}
 
 % \begin{figure}[h!]
 % \centering
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/stdfilt_entrada.png}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/stdfilt_entrada.png}
 %   \caption{Imagem antes da binarização.}
 % \end{subfigure}%
 % \begin{subfigure}{.5\textwidth}
 %   \centering
-%   \includegraphics[width=.5\linewidth]{img/otsu_binaria.png}
+%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/otsu_binaria.png}
 %   \caption{Imagem binarizada.}
 % \end{subfigure}
 % \caption{Processo de binarização de imagens.}
@@ -395,7 +395,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par O elemento estruturante é sobreposto em todos os \textit{pixels} da imagem, de forma que todos os elementos com valor 1 no elemento são considerados na região sobreposta da imagem. Para todo elemento estrututante, é atribuído um \textit{ponto âncora}, que é o \textit{pixel} da região sobreposta da imagem de entrada processado. A \refFig{fig:kernel_morfo} ilustra um elemento estruturante.
 
-\figura[!h]{img/kernel}{Exemplo de elemento estruturante. O elemento central destacado é o \textit{ponto âncora}}{fig:kernel_morfo}{width=0.2\textwidth}
+\figura[!h]{img/Fundamentacao/kernel}{Exemplo de elemento estruturante. O elemento central destacado é o \textit{ponto âncora}}{fig:kernel_morfo}{width=0.2\textwidth}
 
 \par Operações morfológicas são aplicadas em imagens para inúmeras aplicações, mas as principais são \cite{erosionDilationOpencv}:
 
@@ -414,11 +414,11 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par O elemento estrututante é sobreposto em cada um dos \textit{pixels} da imagem de entrada, o máximo local da região sobreposta é calculado, e por fim, esse máximo é atribuído à imagem de saída na \textit{posição âncora} do elemento estruturante. A \refFig{fig:processo_dilatacao} ilustra as etapas descritas acima, considerando o elemento estrututante da \refFig{fig:kernel_morfo}.
 
-\figura[!h]{img/dilatacao}{Resultado da etapa de dilatação. O fundo amarelo corresponde ao elemento estrututante e o verde ao \textit{ponto âncora} substituído pelo máximo valor da região sobreposta}{fig:processo_dilatacao}{width=0.4\textwidth}
+\figura[!h]{img/Fundamentacao/dilatacao}{Resultado da etapa de dilatação. O fundo amarelo corresponde ao elemento estrututante e o verde ao \textit{ponto âncora} substituído pelo máximo valor da região sobreposta}{fig:processo_dilatacao}{width=0.4\textwidth}
 
 \par A \refFig{fig:dil} ilustra uma imagem de entrada para a operação de dilatação e a imagem de saída resultante, respectivamente.
 
-\figuraBib[h!]{img/dil}{Imagem de entrada e saída da operação de dilatação}{erosionDilationOpencv}{fig:dil}{width=0.4\textwidth}%
+\figuraBib[h!]{img/Fundamentacao/dil}{Imagem de entrada e saída da operação de dilatação}{erosionDilationOpencv}{fig:dil}{width=0.4\textwidth}%
 
 \subsection{Erosão} \label{sec:morf:ero}
 
@@ -428,7 +428,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par A \refFig{fig:ero} ilustra uma imagem de entrada para a operação de erosão e a imagem de saída resultante, respectivamente.
 
-\figuraBib[!h]{img/ero}{Imagem de entrada e saída da operação de erosão}{erosionDilationOpencv}{fig:ero}{width=0.4\textwidth}%
+\figuraBib[!h]{img/Fundamentacao/ero}{Imagem de entrada e saída da operação de erosão}{erosionDilationOpencv}{fig:ero}{width=0.4\textwidth}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -457,7 +457,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \equacao{eq:filtragem:loggabor}{H(\omega) = e^{\frac{-log(\omega/\omega_{0})^{2}}{2log(\sigma)^{2}}}}
 
-\figura[!h]{img/loggabor}{Função de ativação do filtro \textit{Log-Gabor} na escala linear}{fig:loggabor}{width=0.5\textwidth}
+\figura[!h]{img/Fundamentacao/loggabor}{Função de ativação do filtro \textit{Log-Gabor} na escala linear}{fig:loggabor}{width=0.5\textwidth}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
