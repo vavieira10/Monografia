@@ -976,7 +976,7 @@
         %   \caption[\tempf.]{\tempf\ifx#5\empty\else~(Fonte: ~\cite{#5})\fi.\label{#1}
           \caption{\tempf.}\label{#1}
         \end{subfigure}
-        \caption{\tempd}
+        \caption{\tempd.}
         \label{\tempg}
     \end{figure}%
 }

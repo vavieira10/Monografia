@@ -22,14 +22,132 @@ documento (\texttt{monografia.tex}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Biometria} \label{sec:fundamentacao:biometria}
 
-\subsection{Tipos biométricos}
+\par Biometria são medidas físicas ou comportamentais que identificam um indivíduo unicamente \cite{li2009encyclopedia}. Nas últimas décadas, com os avanços das tecnologias, foi possível implementar sistemas de autenticação biométrica para identificar pessoas \cite{wayman2005biometric}. 
 
-\subsection{Sistemas biométricos}
+\par As Subseções \ref{sec:fundamentacao:biometria:caracteristicas} e \ref{sec:fundamentacao:biometria:criterios} explicam com mais detalhes quais as características biométricas existem e os critérios utilizados para determinar quais são as melhores, respectivamente. Sistemas biométricos são melhores explicados na Seção \ref{sec:fundamentacao:sis_bio}.
 
-\subsection{Identificação vs Verificação}
+\subsection{Características biométricas}\label{sec:fundamentacao:biometria:caracteristicas}
 
-\subsection{Aceitabilidade/Robustez...}
+\par Características biométricas são as medidas que identificam unicamente uma pessoa. Podem ser divididas em três categorias: físicas, comportamentais e híbridas \cite{li2009encyclopedia}.
 
+\par Características físicas são aspectos fisiológicos do corpo humano. Como medidas, padrões, cores ou
+formatos. Algumas das características físicas mais utilizadas são:
+
+\begin{itemize}
+    \item Impressão digital;
+    \item Íris;
+    \item Rosto;
+    \item Formato das mãos;
+    \item Veias das maos;
+    \item Formato da orelha;
+    \item Retina.
+\end{itemize}
+
+\par Características comportamentais, são aspectos psicológicos. Como fatores que levam pessoas a praticarem atividades ou ações que as distinguem unicamente \cite{wayman2005biometric}. Alguns dos aspectos comportamentais utilizados para autenticação biométrica são:
+
+\begin{itemize}
+    \item Assinatura;
+    \item Forma de caminhar.
+\end{itemize}
+
+\par Já características híbridas, são aspectos que envolvem tanto fatores fisiológicos quanto comportamentais. A característica híbrida mais utilizada em aplicações na atualidade é a voz. Tamanho e formato da boca, garganta, cavidade nasal e outros fatores físicos influenciam diretamente na frequência da voz da pessoa, mas, fatores comportamentais como humor, idioma e sotaque também são essencias para a diferenciação da voz de indivíduos.
+
+\subsection{Qualidade das características biométricas} \label{sec:fundamentacao:biometria:criterios}
+
+\par Como explicado na Seção \ref{sec:fundamentacao:biometria:caracteristicas}, existem inúmeras características biométricas. Não há consenso para qual a melhor, mas cada uma possui vantagens e desvantagens para a utilização em autenticação biométrica. Cinco critérios são utilizados para avaliar a qualidade das características biométricas \cite{wayman2001}:
+
+\begin{enumerate}
+    \item Aceitabilidade: Característica que não sofreria objeções das pessoas para adquirí-la;
+    \item Robustez: Característica que não sofre mudanças ao longo do tempo, ou seja, imutável;
+    \item Disponibilidade: Característica que todo ser humano deveria possuir;
+    \item Distintividade: Característica que possui grande variação em uma população;
+    \item Acessibilidade: Característica que pode ser facilmente adquirida por meio de sensores.
+\end{enumerate}
+
+\par A \refTab{tab:fundamentacao:biometria:criterio} ilustra a comparação das características listadas na Seção \ref{sec:fundamentacao:biometria:caracteristicas} com os cinco critérios enumerados acima \cite{mali2013}.
+
+\tabela{Comparação das características biométricas}{tab:fundamentacao:biometria:criterio}{|l|l|l|l|l|l|}{
+\hline
+\textbf{Biometria} & \textbf{1 - Aceit.} & \textbf{2 - Rob.} & \textbf{3 - Dispon.} & \textbf{4 - Distint.} & \textbf{5 - Acess.} \\ \hline
+Impressão digital & Médio & Alto & Médio & Alto & Médio \\ \hline
+Íris & Baixo & Alto & Alto & Alto & Médio \\ \hline
+Rosto & Alto & Médio & Alto & Baixo & Alto \\ \hline
+Formato das mãos & Médio & Médio & Médio & Médio & Alto \\ \hline
+Veias das Médioãos & Médio & Médio & Médio & Médio & Médio \\ \hline
+Formato da orelha & Alto & Alto & Alto & Médio & Médio \\ \hline
+Retina & Baixo & Médio & Alto & Alto & Baixo \\ \hline
+Assinatura & Alto & Baixo & Baixo & Baixo & Alto \\ \hline
+Forma de caminhar & Alto & Baixo & Médio & Baixo & Alto \\ \hline
+Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
+}
+
+\section{Sistemas biométricos}\label{sec:fundamentacao:sis_bio}
+
+\par Sistemas biométricos são sistemas tecnológicas usados para identificar pessoas por meio de autenticação biométrica e são projetados para duas hipóteses \cite{wayman2005biometric}: 
+
+\begin{enumerate}
+    \item Positivas: Amostras submetidas ao sistema pertencem a uma pessoa registrada;
+    \item Negativas: Amostras submetidas ao sistema pertencem a uma pessoa não registrada.
+\end{enumerate}
+
+\par Podem ser usadas inúmeras características biométricas, como as listadas na Seção \ref{sec:fundamentacao:biometria:caracteristicas}. Ter inúmeros objetivos, como procurar por pessoas conhecidas ou desconhecidas e verificar se a pessoa é ou não é quem afirma que é. Podem ser utilizados, também, em diferentes ambientes, como ao ar livre ou dentro de algum local, ambientes controlados ou não e com o manuseio ou não de pessoas treinadas para usar o sistema \cite{wayman2005biometric}. As aplicações são as mais variadas, mas são utilizados principalmente para controle de acesso de pessoas em locais ou aplicações.
+
+\par Sistemas biométricos tipicamente consistem em dois métodos \cite{wayman2005biometric}:
+
+\begin{itemize}
+    \item Verificação (\textit{Intraclasse}): Usuário informa quem é, insere sua característica biométrica e então comparações são feitas apenas entre as características registradas do usuário com a inserida, verificando se há ou não correspondência;
+    \item Identificação (\textit{Interclasse}): Usuário insere sua característica biométrica e é comparada com todas as registradas no sistema, verificando se há ou não correspondência.
+\end{itemize}
+
+\par Os métodos não precisam ser usados individualmente, podendo haver sistemas híbridos, mas em sistemas negativos, apenas o método de identificação é possível \cite{wayman2005biometric}.
+
+\par A \refFig{fig:sis_bio:arquitetura} ilustra a arquitetura de um sistema biométrico generalizado. O uso de sistemas biométricos consiste em duas etapas: registro e autenticação. O registro é a etapa em que a característica biométrica da pessoa que está usando pela primeira vez o sistema é processada e registrada. Já a autenticação, é a etapa em que uma pessoa cadastrada disponibiliza a característica biométrica para o sistema de forma a verificar se é ou não registrada.
+
+\par Cada um dos blocos do diagrama apresentado na \refFig{fig:sis_bio:arquitetura} são explicados nas Seções \ref{sec:sis_bio:coleta} até \ref{sec:sis_bio:decisao}.
+
+\figura[h!]{img/arquitetura_biometria}{Arquitetura de um sistema biométrico genérico}{fig:sis_bio:arquitetura}{width=1\textwidth}
+
+\subsection{Coleta} \label{sec:sis_bio:coleta}
+
+\par Módulo de sistemas biométricos responsável por capturar sinais de uma característica biométrica por meio de um sensor eletrônico \cite{wayman2005biometric}. O resultado apresentado pelo sensor, que vai ser posteriormente processado, é a combinação de três fatores: a medida biométrica, a maneira com que a medida é apresentada (imagem, áudio, vídeo) e os parâmetros técnicos do sensor. Se qualquer um dos três fatores sofre modificação, o desempenho do sistema é impactado.
+
+\par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e formato das mãos, respectivamente.
+
+\figurasDuplas{h!}{img/fingerprint_sensor}{img/hand_sensor}{Sensores biométricos de impressão digital e formato das mãos}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{Schlage HandPunch HP2000E} (Fonte: \cite{hand_sensor})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:hand}{.5\textwidth}{width=.5\textwidth}}
+
+\subsection{Transmissão}\label{sec:sis_bio:transmissao}
+
+\par Módulo de sistemas biométricos que transmite a característica biométrica capturada pelo sensor no módulo de \textit{Coleta} para ser processada e armazenada \cite{wayman2005biometric}. Esse módulo não precisa estar presente em todo sistema biométrico, apenas os que processam e armazenam os modelos gerados no módulo de \textit{processamento} remotamente.
+
+\par O tamanho dos dados da característica biométrica capturada podem variar, mas geralmente são grandes, e podem causar gargalos na transmissão e ocupar muito espaço de armazenamento. Portanto, técnicas de compressão de dados podem ser aplicadas, para acelerar a transmissão e reduzir o espaço de armazenamento no banco de dados. A compressão, no entanto, introduz desafios, porque causam perda da qualidade dos dados e podem influenciar diretamente nos resultados do módulo de \textit{Processamento} e, consequentemente, no de \textit{decisão}. De forma a reduzir o impacto da compressão, técnicas específicas são aplicadas para cada tipo de característica biométrica.
+
+\par A \refFig{fig:sis_bio:iris_comprimida} ilustra as imagens de uma íris e o resultado da sua compressão usando a técnica \textit{JPEG2000}.
+
+% imagem
+
+\subsection{Processamento}
+
+\par O módulo de processamento consiste em segmentar, extrair os atributos e gerar o modelo da característica biométrica capturada no módulo de coleta \cite{wayman2005biometric}.
+
+\par A segmentação é a etapa responsável por encontrar e separar a característica biométrica no sinal de entrada capturado pelo sensor \cite{wayman2005biometric}. A \refFig{fig:sis_bio:processamento:segmentacao} ilustra os resultados da etapa de segmentação de impressão digital e de uma íris, respectivamente.
+
+% imagens
+
+\par A extração de atributos é a etapa que recebe a característica biométrica segmentada, ignora os ruídos causados pelo sensor, transmissão ou a própria segmentação e a reduz a uma representação matemática com base em seus padrões, comumente chamados de modelos ou \textit{templates} \cite{wayman2005biometric}.
+
+\par Na etapa de registro do sistema, esses \textit{templates} são salvos e associados à pessoa sendo cadastrada em algum banco de dados. Na etapa de autenticação, os \textit{templates} salvos são comparados com o \textit{template} sendo autenticado no módulo de \textit{decisão}.
+
+\subsection{Armazenamento}
+
+\par O módulo de armazenamento é o responsável por armazenar os \textit{templates} das características biométricas geradas no registro de uma pessoa no sistema. Pode ou não, ser um banco de dados centralizado, dependendo da aplicação \cite{wayman2005biometric}.
+
+\par Em sistemas que utilizam a funcionalidade de identificação, é mais comum a utilização de bancos de dados centralizados, enquanto em sistemas de verificação, é mais comum o uso de cartões para armazenar o \textit{template}.
+
+\subsection{Decisão} \label{sec:sis_bio:decisao}
+
+\par O módulo de decisão consiste na comparação dos \textit{templates} de características biométricas armazenadas com o \textit{template} gerado na etapa de autenticação e na decisão se há ou não correspondência para aceitar ou rejeitar a pessoa sendo autenticada no sistema \cite{wayman2005biometric}.
+
+\par A comparação pode ser feita usando métricas de diferença ou similaridade dos \textit{templates}, e varia para cada sistema. Considerando uma distância ou similaridade, a decisão é feita por meio de um limiar. O valor do limiar a ser utilizado no sistema depende da aplicação. Há aplicações de risco e que não podem permitir impostores, de forma que o limiar deve ser mais criterioso. Enquanto há aplicações que não é desejado que pessoas cadastradas sejam negadas frequentemente, e portanto, o limiar deve ser menos criterioso.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,21 +218,25 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par Imagens \textit{\arcshort{VL}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{VL}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
 
-\begin{figure}[h!]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/iris_vl_escura}
-  \caption{Pigmentação escura.}\label{fig:iris_vl_escura}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/iris_vl_clara}
-  \caption{Pigmentação clara.}\label{fig:iris_vl_clara}
-\end{subfigure}
-\caption{Imagens de íris \textit{\acrshort{VL}}.}
-\label{fig:pigmentacoes}
-\end{figure}
+\figurasDuplas{ht!}{img/iris_vl_escura}{img/iris_vl_clara}{Imagens de íris \textit{\acrshort{VL}}}{Pigmentação escura}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.5\textwidth}}
+
+\figura[ht!]{img/iris_nir}{Imagem de íris \textit{\arcshort{NIR}}}{fig:iris_nir}{width=0.3\textwidth}%
+
+% \begin{figure}[h!]
+% \centering
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{img/iris_vl_escura}
+%   \caption{Pigmentação escura.}\label{fig:iris_vl_escura}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{img/iris_vl_clara}
+%   \caption{Pigmentação clara.}\label{fig:iris_vl_clara}
+% \end{subfigure}
+% \caption{Imagens de íris \textit{\acrshort{VL}}.}
+% \label{fig:pigmentacoes}
+% \end{figure}
 
 % \begin{figure}[h!]
 %   \centering
@@ -128,8 +250,6 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 %     \caption{Imagem de íris \textit{\arcshort{VL}} com pigmentação clara.}\label{fig:iris_vl_clara}
 %   \end{minipage}
 % \end{figure}
-
-\figura[h!]{img/iris_nir}{Imagem de íris \textit{\arcshort{NIR}}}{fig:iris_nir}{width=0.4\textwidth}%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +271,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \equacao{eq:espacial:proc_esp}{I_{saida}(x, y) = T[I_{entrada}(x, y)]}
 
-\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:ruidos} explicam técnicas de processamento de imagens no domínio espacial.
+\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:otsu} explicam técnicas de processamento de imagens no domínio espacial.
 
 \subsection{\textit{\acrfull{LBP}}}\label{sec:dom_esp:lbp}
 
@@ -167,7 +287,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
        \end{cases}
 }
        
-\par A fórmula é aplicada para cada \textit{pixel} da imagem de entrada. Aonde $g_{c}$ é o valor do \textit{pixel} central da vizinhança sendo calculada, $g_{p}$ o valor do \textit{pixel} dos vizinhos, \textit{P} o total de vizinhos e R o raio da vizinhança. As coordenadas de $g_{p}$ são calculadas pela fórmula ($Rcos(2\pip/P)$, $Rsen(2\pip/P)$). 
+\par A fórmula é aplicada para cada \textit{pixel} da imagem de entrada. Aonde $g_{c}$ é o valor do \textit{pixel} central da vizinhança sendo calculada, $g_{p}$ o valor do \textit{pixel} dos vizinhos, \textit{P} o total de vizinhos e R o raio da vizinhança. As coordenadas de $g_{p}$ são calculadas pela fórmula ($Rcos(2 \pi p/P)$, $Rsen(2 \pi p/P)$). 
 
 \equacao{eq:lbp:histograma}{H(k) = \sum_{i=1}^{I}\sum_{j=1}^{J}f(LBP_{P,R}(i,j),k), k \in [0, K], \\
     f(x,y) = \begin{cases}
@@ -198,38 +318,24 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par Aonde N é o número total de vizinhos sendo considerados, $v_{i}^{I_{entrada}(x,y)}$ são os valores de cada vizinho e $\mu$ a média da vizinhança. $I_{saida}(x,y)$ e $I_{entrada}(x,y)$ são o valor do \textit{pixel} em determinada posição, x e y, das imagens de entrada e saída, respectivamente.
 
-\par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. As \refFigs{fig:stdfilt:entrada}{fig:stdfilt:var} ilustram uma imagem e o resultado da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
+\par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. A \refFig{fig:stdfilt:entrada} ilustra uma imagem de entrada e a \refFig{fig:filtros} os resultados da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
 
-\figura[!h]{img/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.3\textwidth}
+\figura[!h]{img/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
 
-\begin{figure}[h!]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/iris_vl_escura}
-  \caption{Pigmentação escura.}\label{fig:iris_vl_escura}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/iris_vl_clara}
-  \caption{Pigmentação clara.}\label{fig:iris_vl_clara}
-\end{subfigure}
-\caption{Imagens de íris \textit{\acrshort{VL}}.}
-\label{fig:pigmentacoes}
-\end{figure}
+\figurasDuplas{h!}{img/stdfilt_std}{img/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.5\textwidth}}
 
-\begin{figure}[!h]
-  \centering
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{img/stdfilt_std}
-    \caption{Resultado da filtragem pelo filtro \textit{Desvio Padrão Local}}\label{fig:stdfilt:std}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{img/stdfilt_var}
-    \caption{Resultado da filtragem pelo filtro \textit{Variância Local}}\label{fig:stdfilt:var}
-  \end{minipage}
-\end{figure}
+% \begin{figure}[!h]
+%   \centering
+%   \begin{minipage}[b]{0.4\textwidth}
+%     \includegraphics[width=\textwidth]{img/stdfilt_std}
+%     \caption{Resultado da filtragem pelo filtro \textit{Desvio Padrão Local}}\label{fig:stdfilt:std}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}[b]{0.4\textwidth}
+%     \includegraphics[width=\textwidth]{img/stdfilt_var}
+%     \caption{Resultado da filtragem pelo filtro \textit{Variância Local}}\label{fig:stdfilt:var}
+%   \end{minipage}
+% \end{figure}
 
 
 \subsection{Método \textit{Otsu}}\label{sec:dom_esp:otsu}
@@ -263,21 +369,23 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 
 \par Sua principal aplicação é em processamento de imagens, e consiste em binarizar imagens em escala de cinza. A binarização é feita calculando o histograma da imagem e então encontrando o limiar (intensidade de \textit{pixel}) que melhor separa o fundo e o primeiro plano das imagens \cite{gonsalez2006}. A \refFig{fig:otsu} ilustra imagens antes e depois da binarização utilizando o método \textit{Otsu}.
 
-\begin{figure}[h!]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/stdfilt_entrada.png}
-  \caption{Imagem antes da binarização.}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{img/otsu_binaria.png}
-  \caption{Imagem binarizada.}
-\end{subfigure}
-\caption{Processo de binarização de imagens.}
-\label{fig:otsu}
-\end{figure}
+\figurasDuplas{h!}{img/stdfilt_entrada}{img/otsu_binaria}{Processo de binarização de imagens utilizando o método \textit{Otsu}}{Imagem original}{Imagem binarizada}{fig:otsu}{fig:otsu:org}{{fig:otsu:bin}{.5\textwidth}{width=.5\textwidth}}
+
+% \begin{figure}[h!]
+% \centering
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{img/stdfilt_entrada.png}
+%   \caption{Imagem antes da binarização.}
+% \end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%   \centering
+%   \includegraphics[width=.5\linewidth]{img/otsu_binaria.png}
+%   \caption{Imagem binarizada.}
+% \end{subfigure}
+% \caption{Processo de binarização de imagens.}
+% \label{fig:otsu}
+% \end{figure}
 
 \section{Processamento Morfológico de Imagens}\label{sec:morf}
 
