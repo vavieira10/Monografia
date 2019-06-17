@@ -1,4 +1,7 @@
-\par Este projeto consiste na aplicação de duas métricas de qualidade, \textit{\acrfull{DSMI}} \cite{Jenadeleh_2018_CVPR_Workshops} e \textit{\acrfull{FCE}} \cite{du2010}, e verificar como elas influenciam no desempenho de sistemas de reconhecimento de íris.
+
+\par Neste capítulo, uma revisão bibliográfica de métricas de qualidade de imagem, imagens biométricas, imagens de íris e da segmentação de íris é feita e os métodos das métricas \textit{\acrfull{DSMI}} e \textit{\acrfull{FCE}} são explicados com detalhes.
+
+\par Este projeto consiste na aplicação de duas métricas de qualidade, \textit{\acrshort{DSMI}} \cite{Jenadeleh_2018_CVPR_Workshops} e \textit{\acrshort{FCE}} \cite{du2010}, e verificar como elas influenciam no desempenho de sistemas de reconhecimento de íris.
 
 \par Qualidade de imagens é um tema que tem grande destaque na comunidade científica, por suas muitas aplicações, como sistemas biométricos, transmissão, compressão, restauração entre outras \cite{zhang2015}. Possui diversos desafios, principalmente porque qualidade é algo subjetivo e sujeito à percepção de seres humanos \cite{xu2016}. 
 
@@ -107,8 +110,6 @@
 
 \par Inicialmente, a imagem da íris normalizada resultante da etapa de segmentação, passa por uma etapa de pré processamento. Cada linha da imagem é transformada para o domínio da frequência e passa por um processo de filtragem, usando o filtro passa banda \textit{Log-Gabor} unidimensional, que é descrito pela \refEq{eq:filtragem:loggabor}. As linhas são então transformadas de volta para o domínio do espaço.
 
-% \par Os parâmetros utilizadas na \refEq{eq:filtragem:loggabor} são: $\omega_{0} = 22$ e $\sigma = 0.5$. (DEVO COLOCAR ISSO AGORA OU EM METODOLOGIA/EXPERIMENTOS?)
-
 
 \par As operações que são feitas entre duas linhas consecutivas, $\vec{l}_{i}$ e $\vec{l}_{i+1}$, na magnitude da imagem resultante da etapa de pré processamento são descritas nas \refEqs{eq:fce:fcm1}{eq:fce:fcm4}:
 \begin{equation} \label{eq:fce:fcm1}
@@ -172,7 +173,6 @@ As \refEqs{eq:fce:normFCM}{eq:fce:normD} descrevem as funções de normalizaçã
 
 \noindent onde $\beta = 0.005$ e $\alpha = a/\beta$;
 
-% \par Como a métrica foi proposta para imagens no espectro \textit{NIR} \cite{du2010}, e o projeto proposto trabalha com imagens no espectro de luz visível, o parâmetro $\beta$ foi recalculado, de forma que experimentalmente achou-se $\beta = 0.294$. Já o parâmetro $\alpha$ continua sendo $\alpha = 1/\beta$ (FALAR AQUI OU EM METODOLOGIA/RESULTADOS?).
 
 \begin{equation}\label{eq:fce:normO}
   g(O) = (1 - e^{-\lambda(1 - O)})/\kappa
