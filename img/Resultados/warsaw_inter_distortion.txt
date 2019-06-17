@@ -10,3 +10,11 @@ All d' = 1.427
 DSMI d' = 1.562
 FCE d' = 1.315
 Both d' = 1.956
+All intra mean = 0.297209 | var = 0.015208 | std = 0.123322
+All inter mean = 0.452087 | var = 0.001508 | std = 0.038834
+DSMI intra mean = 0.263134 | var = 0.011077 | std = 0.105246
+DSMI inter mean = 0.451280 | var = 0.000726 | std = 0.026938
+FCE intra mean = 0.267171 | var = 0.013147 | std = 0.114659
+FCE inter mean = 0.454876 | var = 0.000481 | std = 0.021923
+Both intra mean = 0.238497 | var = 0.007573 | std = 0.087023
+Both inter mean = 0.453803 | var = 0.000479 | std = 0.021878
