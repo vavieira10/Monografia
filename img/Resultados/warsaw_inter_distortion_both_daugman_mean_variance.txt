@@ -1,0 +1,5 @@
+EER threshold = 0.408333
+Mean matching = 0.311537
+Mean non_matching = 0.455095
+Variance matching = 0.010382
+Variance non_matching = 0.000414
