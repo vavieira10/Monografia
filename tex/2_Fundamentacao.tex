@@ -111,7 +111,9 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e íris respectivamente.
 
-\figurasDuplas{h!}{img/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/irisaccess}{Sensores biométricos de impressão digital e íris}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:iris}{.5\textwidth}{width=.5\textwidth}}
+\figurasDuplas{H}{img/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/irisaccess}{Sensores biométricos de impressão digital e íris}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:iris}{.5\textwidth}{width=.5\textwidth}}
+
+\FloatBarrier
 
 \subsection{Transmissão}\label{sec:sis_bio:transmissao}
 
@@ -214,13 +216,13 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \equacao{eq:stdfilt}{I_{saida}(x,y) = \frac{1}{N}\sum_{i=1}^{N}(v_{i}^{I_{entrada}(x,y)} - \mu)^2}
 
-\noindent onde N é o número total de vizinhos sendo considerados, $v_{i}^{I_{entrada}(x,y)}$ são os valores de cada vizinho e $\mu$ a média da vizinhança. $I_{saida}(x,y)$ e $I_{entrada}(x,y)$ são o valor do \textit{pixel} em determinada posição, x e y, das imagens de entrada e saída, respectivamente. Essa operação é feita em todos os \textit{pixels} da imagem de entrada,
+\noindent onde N é o número total de vizinhos sendo considerados, $v_{i}^{I_{entrada}(x,y)}$ são os valores de cada vizinho e $\mu$ a média da vizinhança. $I_{saida}(x,y)$ e $I_{entrada}(x,y)$ são o valor do \textit{pixel} em determinada posição, x e y, das imagens de entrada e saída, respectivamente. Essa operação é feita em todos os \textit{pixels} da imagem de entrada.
 
 \par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. A \refFig{fig:stdfilt:entrada} ilustra uma imagem de entrada e a \refFig{fig:filtros} os resultados da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
 
-\figura[!h]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
+\figurasDuplas{b!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.6\linewidth}}
 
-\figurasDuplas{h!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.5\textwidth}}
+\figura[H]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
 
 % \begin{figure}[!h]
 %   \centering
@@ -235,6 +237,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 %   \end{minipage}
 % \end{figure}
 
+\FloatBarrier
 
 \subsection{Método \textit{Otsu}}\label{sec:dom_esp:otsu}
 
@@ -392,7 +395,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
     \item A dilatação da pupila pode eliminar alguns padrões da íris.
 \end{itemize}
 
-\par A Seção \ref{sec:iris:olho} explica o que é a íris e suas funções; a Seção \ref{sec:iris:nir_vl} explica as diferenças, as vantagens e desvantagens do uso de imagens de olho \textit{\acrfull{NIR}} e \textit{\acrfull{VL}} em sistemas de reconhecimento de íris; e por fim, a Seção \ref{sec:iris:rec_iris} explica como algoritmos de reconhecimento de íris funcionam.
+\par A Seção \ref{sec:iris:olho} explica o que é a íris e suas funções; a Seção \ref{sec:iris:nir_vl} explica as diferenças, as vantagens e desvantagens do uso de imagens de olho \textit{\acrfull{NIR}} e \textit{\acrfull{LV}} em sistemas de reconhecimento de íris; e por fim, a Seção \ref{sec:iris:rec_iris} explica como algoritmos de reconhecimento de íris funcionam.
 
 \subsection{Olho humano}\label{sec:iris:olho}
 
@@ -435,20 +438,20 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 %   \end{minipage}
 % \end{figure}
 
-\subsection{\textit{Imagens \acrfull{VL} vs \acrfull{NIR}}} \label{sec:iris:nir_vl}
+\subsection{\textit{Imagens \acrfull{LV} vs \acrfull{NIR}}} \label{sec:iris:nir_vl}
 
 \par Espectro eletromagnético é o intervalo de ondas que são caracterizadas por comprimento de onda, frequência e energia \cite{gonsalez2006}. A \refFig{fig:espectro} ilustra o espectro de ondas eletromagnéticas.
 
 \figuraBib[!h]{img/Fundamentacao/espectro_eletromagnetico}{Espectro de ondas eletromagnéticas}{espectroeletromagnetico}{fig:espectro}{width=0.5\textwidth}%
 
-Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câmeras fotográficas comuns, que possuem comprimento de onda no intervalo 430-790 \textit{nm} no espectro eletromagnético, e é o intervalo perceptível pelo olho humano \cite{gonsalez2006}.
+Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câmeras fotográficas comuns, que possuem comprimento de onda no intervalo 430-790 \textit{nm} no espectro eletromagnético, e é o intervalo perceptível pelo olho humano \cite{gonsalez2006}.
 
 \par Já imagens \arcshort{NIR} são imagens que possuem comprimento de onda no intervalo 800-900 \textit{nm} no espectro eletromagnético \cite{gonsalez2006}. O olho humano não é capaz de perceber esse intervalo no espectro eletromagnético, mas câmeras fotográficas especiais são capazes de capturá-las e registrá-las, de forma que possibilitam o estudo de suas propriedades\cite{nir}.
 
 
-\par Imagens \textit{\arcshort{VL}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{VL}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
+\par Imagens \textit{\arcshort{LV}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{LV}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
 
-\figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{VL}} (Fonte: \cite{trokielwicz2016-Warsaw})}{Pigmentação escura)}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.6\linewidth}}
+\figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{LV}} (Fonte: \cite{trokielwicz2016-Warsaw})}{Pigmentação escura)}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.6\linewidth}}
 
 \figuraBib[ht!]{img/Fundamentacao/iris_nir_daugman}{Imagem de íris \textit{\arcshort{NIR}}}{nirDaugman}{fig:iris_nir}{width=0.3\textwidth}%
 
@@ -518,7 +521,7 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 %   \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_vl_clara}
 %   \caption{Pigmentação clara.}\label{fig:iris_vl_clara}
 % \end{subfigure}
-% \caption{Imagens de íris \textit{\acrshort{VL}}.}
+% \caption{Imagens de íris \textit{\acrshort{LV}}.}
 % \label{fig:pigmentacoes}
 % \end{figure}
 
@@ -526,12 +529,12 @@ Imagens \textit{\arcshort{VL}} são imagens capturadas por aparelhos, como câme
 %   \centering
 %   \begin{minipage}[b]{0.4\textwidth}
 %     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_vl_escura.jpg}
-%     \caption{Imagem de íris \textit{\arcshort{VL}} com pigmentação escura.} \label{fig:iris_vl_escura}
+%     \caption{Imagem de íris \textit{\arcshort{LV}} com pigmentação escura.} \label{fig:iris_vl_escura}
 %   \end{minipage}
 %   \hfill
 %   \begin{minipage}[b]{0.4\textwidth}
 %     \includegraphics[width=\textwidth]{img/Fundamentacao/iris_vl_clara.jpg}
-%     \caption{Imagem de íris \textit{\arcshort{VL}} com pigmentação clara.}\label{fig:iris_vl_clara}
+%     \caption{Imagem de íris \textit{\arcshort{LV}} com pigmentação clara.}\label{fig:iris_vl_clara}
 %   \end{minipage}
 % \end{figure}
 
