@@ -1,5 +1,42 @@
-EER threshold = 0.425926
+Threshold = 0.200000
+Mean matching = 0.148444
+Mean non_matching = 0.440277
+Variance matching = 0.000796
+Variance non_matching = 0.000919
+d'=9.966698
+-----------------------------
+Threshold = 0.250000
+Mean matching = 0.163380
+Mean non_matching = 0.441024
+Variance matching = 0.001618
+Variance non_matching = 0.000760
+d'=8.051838
+-----------------------------
+Threshold = 0.300000
+Mean matching = 0.181734
+Mean non_matching = 0.441652
+Variance matching = 0.003017
+Variance non_matching = 0.000656
+d'=6.064846
+-----------------------------
+Threshold = 0.350000
+Mean matching = 0.198134
+Mean non_matching = 0.441946
+Variance matching = 0.004902
+Variance non_matching = 0.000625
+d'=4.638149
+-----------------------------
+Threshold = 0.400000
+Mean matching = 0.325826
+Mean non_matching = 0.444720
+Variance matching = 0.009739
+Variance non_matching = 0.000497
+d'=1.661911
+-----------------------------
+Threshold = 0.425926
 Mean matching = 0.390630
 Mean non_matching = 0.452538
 Variance matching = 0.004274
 Variance non_matching = 0.000320
+d'=1.291782
+-----------------------------
