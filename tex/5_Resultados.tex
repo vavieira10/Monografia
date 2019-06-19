@@ -1,0 +1,252 @@
+
+\par Introduzir os resultados e estruturar a organização dos experimentos
+
+\par Falar dos critérios que escolhemos para avaliar e o porquê
+
+\par Falar que os nossos testes envolvem apenas verificação.
+
+
+\section{Bancos de dados} \label{sec:experimentos:db}
+
+\par Para a análise da arquitetura de sistema de reconhecimento de íris proposta com as duas métricas, \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}, foram utilizados quatro bancos de dados de íris \textit{\acrshort{LV}}: 
+
+\begin{enumerate}
+    \item \textit{MICHE} \cite{marsico2017-MICHE-1, santada2016-MICHE-2, miche};
+    \item \textit{UBIRISv1} \cite{proenca2005-ubirisv1, ubirisv1};
+    \item \textit{UBIRISv2} \cite{proence2010-ubirisv2, ubirisv2};
+    \item \textit{\acrfull{Warsaw}} \cite{trokielwicz2016-Warsaw, warsaw}.
+\end{enumerate}
+
+\par De cada banco de dados, foram selecionadas cinco imagens de 40 indivíduos aleatoriamente. Dessas cinco imagens, 2 foram reservadas para treino e 3 para teste. As imagens de treino foram utilizadas para calcular os limiares $T_{DSMI}$, $T_{FCE}$ de cada banco de dados. Já as imagens de teste foram utilizadas para o uso na arquitetura proposta e avaliar como as métricas de qualidade influenciaram no rendimento de sistemas de reconhecimento de íris. Foram selecionadas somente cinco imagens porque entre os bancos de dados, é o número mínimo de imagens por indivíduo.
+
+% \par De cada banco de dados, foram selecionadas cinco imagens de 40 indivíduos aleatoriamente. Dessas cinco imagens, 2 foram reservadas para treino e 3 para teste. As imagens de treino foram utilizadas para calcular os limiares $T_{DSMI}$, $T_{FCE}$ de cada banco de dados e o parâmetro $\beta$ da função de normalização f() (\refEq{eq:fce:normFCM}) para todos os bancos de dados. Já as imagens de teste foram utilizadas para o uso na arquitetura proposta e avaliar como as métricas de qualidade influenciaram no rendimento de sistemas de reconhecimento de íris.
+
+\par As Seções \ref{sec:experimentos:db:miche} até \ref{sec:experimentos:db:warsaw} explicam com mais detalhes e ilustram os bancos de dados enumerados acima e na Seção \ref{sec:experimentos:db:limiares} é explicado como os limiares foram calculados e os resultados obtidos.
+
+\subsection{\textit{MICHE}}\label{sec:experimentos:db:miche}
+
+\par \textit{MICHE} é uma base de dados de imagens de íris capturadas por \textit{smartphones}, cujos objetivos são entregar uma larga quantidade de indivíduos, usar mais de um \textit{smartphone} para capturar as imagens, simular situações reais em que as pessoas tiram as próprias fotos e sessões para a aquisição das imagens em tempos separados \cite{santada2016-MICHE-2}. O banco de dados contém imagens de 75 indivíduos, aonde para cada pessoa, somente imagens de um dos olhos é capturada e pelo menos 4 imagens devem ser capturadas nos \textit{smartphones}:
+
+\begin{itemize}
+    \item \textit{Galaxy Samsung IV}: 1297 imagens;
+    \item \textit{iPhone5}: 1262 imagens;
+    \item \textit{Galaxy Tablet II}: 632 imagens.
+\end{itemize}
+
+\par As imagens são capturadas pelos próprios voluntários, aonde eles podem ou não estar de óculos, são capturadas em distâncias diferentes e em dois ambientes diferentes: ao ar livre e em lugares fechados. As imagens do bancos de dados são extremamente desafiadoras para algoritmos de segmentação, porque como os indivíduos da amostra que capturaram as imagens, ruídos como cabelo, fundos na imagem, baixa resolução, problemas de foco, borrão em movimento e distorções de iluminação são inevitáveis.
+
+\par Neste projeto, foram utilizadas somente as imagens capturadas pelo \textit{smartphone} \textit{iPhone5}.
+
+\par A \refFig{fig:experimentos:miche_boas} ilustra imagens de boa qualidade do banco de dados \textit{MICHE} e capturadas em ambientes e distâncias diferentes. Já a \refFig{fig:experimentios:miche_ruim} ilustra imagens ruídosas, com óculos, com fundo e com cabelo.
+
+\subsection{\textit{UBIRISv1}}\label{sec:experimentos:db:ubirisv1}
+
+\par \textit{UBIRISv1} é um banco de dados de imagens de íris capturadas por câmera fotográfica com o objetivo de capturar imagens com vários ruídos, de forma a simular ambientes não controlados de aquisição \cite{proenca2005-ubirisv1, ubirisv1}. O banco de dados possui imagens de 241 indivíduos, totalizando 1877 imagens. As imagens são capturadas pela câmera \textit{Nikon E5700} e foram tiradas em duas sessões, onde:
+
+\begin{itemize}
+    \item Primeira sessão: Imagens foram capturadas com o objetivo de minimizar ruídos, como reflexo, luminosidade e contraste, e a estrutura para capturar as imagens foi montada em uma sala escura;
+    \item Segunda sessão: Local de captura foi mudado, para incorporar fatores de luminosidade natural, de forma que ruídos como reflexos, problemas de foco, contraste aparecem nas imagens.
+\end{itemize}
+
+\par Neste projeto, foram separadas imagens de 20 indivíduos da primeira sessão e 20 da segunda sessão.
+
+\par As Figuras \ref{fig:experimentos:ubirisv1_sessao1} e \ref{fig:experimentos:ubirisv1_sessao2} ilustram imagens capturadas na primeira e segunda sessão, respectivamente.
+
+\subsection{\textit{UBIRISv2}}\label{sec:experimentos:db:ubirisv2}
+
+\par \textit{UBIRISv2} é um banco de dados de imagens de íris dos mesmos autores do \textit{UBIRISv1}, com o objetivo de deixar as imagens mais realistas, ou seja, com mais tipos de ruídos e em diversas distâncias \cite{proence2010-ubirisv2}. O banco de dados é composto por 11102 imagens distribuídas em 261 indivíduos. As imagens foram capturadas pela câmera \textit{Canon EOS 5D}.
+
+\par A captura de imagens foi dividida em duas sessões, onde somente a localização da câmera e o tipo de luz artificial no ambiente mudaram.Três imagens são capturadas em cinco distâncias diferentes da câmera, entre 4 e 8 metros, totalizando 15 imagens por indivíduo em cada sessão: 
+
+\begin{itemize}
+    \item 8 metros: I1-I3;
+    \item 7 metros: I4-I6;
+    \item 6 metros: I7-I9;
+    \item 5 metros: I10-I12;
+    \item 4 metros: I13-I15.
+\end{itemize}
+
+\par Foi solicitado aos indivíduos que olhassem para pontos diferentes no ambiente enquanto andavam lentamente entre as marcas das distância, de forma a capturar imagens da íris em ângulos diferentes e em movimento para introduzir ruídos.
+
+\par No projeto, foram utilizadas somente imagens da primeira sessão do banco de dados e imagens capturadas a 4 e 5 metros da câmera (I11-I15), por conta de algumas restrições dos parâmetros de tamanho mínimo e máximo da pupila e íris do algoritmo de segmentação do sistema \textit{OSIRISv4.1}.
+
+\par A \refFig{fig:experimentos:ubirisv2} ilustra exemplos de imagens das cinco distâncias usadas no \textit{UBIRISv2}.
+
+\subsection{\textit{\acrshort{Warsaw}}}\label{sec:experimentos:db:warsaw}
+
+\par \textit{\acrshort{Warsaw}} é um banco de dados de imagens de íris capturadas por \textit{smartphones} \cite{trokielwicz2016-Warsaw}. Tem o objetivo de propor imagens de íris de \textit{smartphones} de boa qualidade e avaliar seu rendimento em sistemas de reconhecimento de íris conhecidos. Participaram do projeto 70 voluntários, onde a captura das imagens de suas íris esquerda e direita foi dividida em duas sessões e em ambientes fechados. As imagens foram capturadas pelo \textit{smartphone} \textit{iPhone 5s} e em todas, foi utilizada a câmera traseira com \textit{flash}. No total, foram capturadas 3192 imagens de 139 e 136 íris diferentes dos 70 voluntários.
+
+\par No projeto, foram utilizadas somente imagens da primeira sessão e para cada indivíduo selecionado era usado somente as imagens de uma das suas íris.
+
+
+\par A \refFig{fig:experimentos:warsaw_1} ilustra imagens da primeira sessão do banco de dados \textit{\acrshort{Warsaw}} e a \refFig{fig:experimentos:warsaw_2} imagens da segunda sessão.
+
+\subsection{Limiares $T_{DSMI}$ e $T_{FCE}$} \label{sec:experimentos:db:limiares}
+
+\par Como os banco de dados escolhidos para os experimentos possuem características diferentes, os limiares $T_{DSMI}$ e $T_FCE$ da arquitetura proposta (\refFig{fig:metodologia:arquitetura}) foram calculados separadamente para cada banco de dados.
+
+\par Para calcular o limiar $T_{DSMI}$m foram usadas as duas imagens de treino de 40 indivíduos dos bancos de dados, totalizando 80 por banco de dados. As etapas para o cálculo do limiar de cada banco de dados são enumeradas abaixo:
+
+\begin{enumerate}
+    \item Calcular a métrica de qualidade \textit{\acrshort{DSMI}} das 80 imagens;
+    \item Gerar o histograma das métricas calculadas;
+    \item O limiar $T_{DSMI}$ consiste no limiar \textit{Otsu} (\ref{sec:dom_esp:otsu}) calculado a partir do histograma.
+\end{enumerate}
+
+\par O cálculo do limiar $T_{FCE}$ seguiu os mesmos passos descritos para o limiar $T_{DSMI}$, mas antes foram executadas as etapas de segmentação do \textit{OSIRISv4.1} das 80 imagens de cada banco de dados e ao invés de calcular a qualidade das imagens de íris usando a métrica \textit{\acrshort{DSMI}}, foram calculadas as qualidades das segmentações pela métrica de qualidade \textit{\acrshort{FCE}}. Os limiares calculados para cada banco de dados são mostrados na \refTab{tab:experimentos:limiares_dsmi_fce}.
+
+\begin{table}[h!]
+\centering
+\captionof{table}{Valores dos limiares $T_{DSMI}$ e $T_{FCE}$ calculados para todos os bancos de dados.} \label{tab:experimentos:limiares_dsmi_fce} 
+\begin{tabular}{lllll}
+\cline{2-5}
+\multicolumn{1}{l|}{}             & \multicolumn{1}{l|}{\textit{\textbf{MICHE}}} & \multicolumn{1}{l|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{1}{l|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{1}{l|}{\textit{\begin{tabular}[c]{@{}l@{}}\textbf{Warsaw}\end{tabular}}} \\ \hline
+\multicolumn{1}{|l|}{\textit{\textbf{$T_{DSMI}$}}} & \multicolumn{1}{l|}{0.75}           & \multicolumn{1}{l|}{0.83}              & \multicolumn{1}{l|}{0.69}              & \multicolumn{1}{l|}{0.51}                                                                                    \\ \hline
+\multicolumn{1}{|l|}{\textit{\textbf{$T_{FCE}$}}} & \multicolumn{1}{l|}{0.54}           & \multicolumn{1}{l|}{0.85}              & \multicolumn{1}{l|}{0.54}              & \multicolumn{1}{l|}{0.9}                                                                                     \\ \hline
+                                  &                                     &                                        &                                        &                                                                                                 
+\end{tabular}
+\end{table}
+
+\par Como explicado na Seção \ref{sec:dom_esp:otsu}, o limiar de \textit{Otsu} calcula o limiar que maximiza a variância entre duas classes. No caso, as classes consideradas no cálculos dos limiares $T_{DSMI}$ e $T_{FCE}$ são imagens ou segmentações ruins e boas. Pela tabela, é possível notar como os valores encontrados para os dois limiares variaram para cada banco de dados. O valor do limiar $T_{DSMI}$  do \textit{MICHE} é elevado, porque suas imagens apresentam boas qualidades e o valor do limiar $T_{FCE}$ é baixo, porque como as imagens são capturadas pelas pessoas, o algoritmo de segmentação do \textit{OSIRISv4.1} apresentou resultados ruins. Os limiares do banco de dados \textit{UBIRISv1} apresentaram valores condizentes, onde a qualidade de suas imagens é elevada e a segmentação também. O banco de dados \textit{UBIRISv2} é o mais desafiador entre os escolhidos, porque as imagens apresentam ruídos e causam dificuldades para a segmentação, por conta das diferenças de distância que as imagens foram capturadas, como explicado na Seção \ref{sec:experimentos:db:ubirisv2}, e apresentou valores de limiares esperados para suas condições. O banco de dados \textit{\acrshort{Warsaw}} foi o que apresentou o resultado menos esperado para o limiar $T_{DSMI}$, porque as suas imagens, analisando subjetivamente, são muito boas, como ilustrado nas Figuras \ref{fig:experimentos:warsaw_1} e \ref{fig:experimentos:warsaw_2}, e não apresentaram valores esperados pela métrica de qualidade \textit{\acrshort{DSMI}}, enquanto que o valor do limiar $T_{FCE}$ foi esperado, porque as segmentações apresentaram bons resultados.
+
+\FloatBarrier
+
+\subsection{Ruídos} \label{sec:experimentos:ruidos}
+
+\par Conforme explicado na Seção \ref{sec:experimentos:db}, cinco imagens de 40 indivíduos foram escolhidos aleatoriamente em todos os bancos de dados. Dessas cinco imagens, duas foram reservadas para o cálculo dos limiares $T_{DSMI}$ e $T_{FCE}$ e três para a análise do desempenho da arquitetura de sistema de reconhecimento de íris proposta usando as métricas \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}. 
+
+\par Como a qualidade das imagens podem influenciar diretamente na segmentação de íris e três imagens de teste serem muito poucas para os experimentos, por conta da limitação que os bancos de dados imporam, foram geradas imagens com seis ruídos artificiais: \textit{Desfoque Gaussiano}, \textit{Impulso (Sal e Pimenta)}, \textit{\acrfull{WGN}}, \textit{Superexposição}, \textit{Desfoque Móvel} e o padrão de compressão \textit{JPEG2000}. Os cinco primeiros ruídos foram escolhidos porque são os ruídos mais comuns em imagens de íris e são utilizados nos experimentos da métrica \textit{\acrshort{DSMI}} e \cite{Jenadeleh_2018_CVPR_Workshops} e a técnica de compressão \textit{JPEG2000} é a utilizada nos experimentos da métrica \textit{\acrshort{FCE}} \cite{du2010}. Para cada ruído, são usados quatro parâmetros diferentes, de forma que são geradas quatro imagens ruidosas. Os ruídos são gerados para cada imagem de teste, de forma que para cada, 24 novas imagens são geradas e no final, totalizam 3000 imagens para serem usadas nos experimentos em cada banco de dados.
+
+\par Ruídos em imagens digitais são distorções causadas por variações aleatórias no brilho ou cor das imagens, podem ser causados por fatores como o sensor da câmera, iluminação, desfoque, compressão e diminuem a qualidade das imagens \cite{gonsalez2006}. O ruído \textit{Desfoque Gaussiano} consiste em ruídos causados pela função \textit{Gaussiana} e geralmente causam suavizações nas imagens \cite{gonsalez2006}. O ruído \textit{Sal e Pimenta} consiste em distúrbios no sinal da imagem que provocam \textit{pixels} brancos e pretos distribuídos na imagem \cite{gonsalez2006}. O ruído \textit{\acrshort{WGN}} consiste em um ruído causado por sinais aleatórios com intensidades uniformes em frequências que seguem a distribuição \textit{Gaussiana} e causam distorções distribuídas na imagem \cite{gonsalez2006}. \textit{Superexposição} é um ruído causado por muita iluminação na hora da captura de imagens e faz com que as intensidades dos \textit{pixels} das imagens tenham valores elevados. \textit{Desfoque Móvel} é o ruído causado por movimento da câmera sendo usada para capturar alguma imagem, no movimento do objeto ou paisagem sendo capturada pela câmera, e causam desfoques na imagem \cite{gonsalez2006}. O padrão de compressão com perdas \textit{JPEG2000} consiste na utilização de técnicas para reduzir o tamanho da imagem, podendo perder a sua qualidade original, e quanto maior a taxa de compressão escolhida, mais distorções são inseridas na imagem resultante \cite{marcellin2000-jpeg2000}.
+
+\begin{table}[h!]
+\centering
+\caption{Ruídos utilizados e os parâmetros utilizados}
+\label{tab:experimentos:ruidos}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Ruídos}} & \multicolumn{1}{c|}{\textbf{Parâmetros}} \\ \hline
+\textit{Desfoque Gaussiano} & {}$\sigma$ = 0.5, 2, 3.5, 5 {} \\ \hline
+\textit{Impulso (Sal e Pimenta)} & {}Densidade = 0.05, 0.2, 0.35, 0.5 {} \\ \hline
+\textit{\acrshort{WGN}} & {}$\mu = 0$; $\sigma^2$ = 0.002, 0.008, 0.014, 0.02{} \\ \hline
+\textit{Superexposição} & {}Constante = 10, 40, 70, 100 {} \\ \hline
+\textit{Desfoque Móvel} & {}Comprimento, $\theta$ = 10, 26.66, 43.33, 60{} \\ \hline
+\textit{JPEG2000} & {}Taxa de compressão = 25, 50, 75, 100{} \\ \hline
+\end{tabular}
+\end{table}
+
+\par A \refFig{fig:experimentos:ruidos} ilustra exemplos de imagens de íris com os ruídos gerados.
+
+\FloatBarrier
+
+\section{Segmentação} \label{sec:experimentos:segmentacao}
+
+\par Colocar os parâmetros e os resultdados das segmentações
+
+\par Analisar e problematizar as segmentações
+
+\begin{table}[h!]
+\centering
+\caption{Parâmetros de diâmetros da pupila e íris usados no sistema \textit{OSIRISv4.1} para os bancos de dados \textit{MICHE}, \textit{UBIRISv1} e \textit{Warsaw}.}
+\label{tab:experimentos:diametros}
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+ & \multicolumn{1}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{1}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{1}{c|}{\textit{\textbf{Warsaw}}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{Pupila (Min, Max)}} & (75, 160) & (80, 160) & (50, 200) \\ \hline
+\multicolumn{1}{|l|}{\textbf{Íris (Min, Max)}} & (160, 500) & (160, 450) & (100, 400) \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Parâmetros de diâmetros da pupila e íris usados no sistema \textit{OSIRISv4.1} para o banco de dados \textit{UBIRISv2}.}
+\label{tab:experimentos:diametros_ubirisv2}
+\begin{tabular}{l|l|l|l|l|}
+\cline{2-5}
+ & \multicolumn{1}{c|}{\textbf{I11}} & \multicolumn{1}{c|}{\textbf{I12}} & \multicolumn{1}{c|}{\textbf{I13 e I14}} & \multicolumn{1}{c|}{\textbf{I15}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{Pupila (Min, Max)}} & (54, 77) & (60, 70) & (60, 70) & (40, 80) \\ \hline
+\multicolumn{1}{|l|}{\textbf{Íris (Min, Max)}} & (99, 110) & (100, 120) & (100, 190) & (100, 200) \\ \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\section{Experimentos de Reconhecimento de Íris}\label{sec:experimentos:experimentos}
+
+\par Explicar o que foi utilizado pra verificar os testes e etc...
+
+\subsection{\textit{\acrfull{AUC}}, \textit{\acrfull{ROC}} e \textit{\acrfull{EER}}}\label{sec:experimentos:auc}
+
+\subsection{\textit{\acrfull{d'}}}\label{sec:experimentos:daugman}
+
+\par Introduzir o que é e explicar os experimentos, limiares, etc... \cite{daugman2000}
+
+\begin{table}[h!]
+\centering
+\caption{Limiares utilizados para o cálculo do \textit{\acrshort{d'}}}
+\label{tab:experimentos:limiares}
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+ & $T_{1}$ & $T_{2}$ & $T_{3}$ \\ \hline
+\multicolumn{1}{|l|}{\textbf{Limiar}} & 0.2 & 0.3 & 0.4 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Limiares encontrados a partir do \textit{\acrshort{EER}} ($T_{FCE}$).}
+\label{tab:experimentos:limiar_eer}
+\tabcolsep=0.09cm
+\begin{tabular}{l|l|l|l|l|l|l|l|l|}
+\cline{2-9}
+ & \multicolumn{2}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{2}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{2}{c|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{2}{c|}{\textit{\textbf{Warsaw}}} \\ \cline{2-9} 
+ & \multicolumn{1}{c|}{\textbf{SR}} & \multicolumn{1}{c|}{\textbf{CR}} & \multicolumn{1}{c|}{\textbf{SR}} & \multicolumn{1}{c|}{\textbf{CR}} & \multicolumn{1}{c|}{\textbf{SR}} & \multicolumn{1}{c|}{\textbf{CR}} & \multicolumn{1}{c|}{\textbf{SR}} & \multicolumn{1}{c|}{\textbf{CR}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{SM}} & 0.424020 & 0.431624 & 0.431900 & 0.433628 & 0.426407 & 0.429078 & 0.408257 & 0.428270 \\ \hline
+\multicolumn{1}{|l|}{\textbf{DSMI}} & 0.425373 & 0.431090 & 0.428070 & 0.428070 & 0.429293 & 0.430233 & 0.410030 & 0.419355 \\ \hline
+\multicolumn{1}{|l|}{\textbf{FCE}} & 0.426117 & 0.441176 & 0.425926 & 0.437984 & 0.423810 & 0.441667 & 0.404762 & 0.427305 \\ \hline
+\multicolumn{1}{|l|}{\textbf{DM}} & 0.430556 & 0.439655 & 0.406250 & 0.406250 & 0.427083 & 0.438172 & 0.407986 & 0.40833 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\caption{Valores calculados para \textit{\acrshort{d'}} nas imagens sem ruídos.}
+\label{tab:experimentos:d:sem_ruido}
+\tabcolsep=0.02cm
+\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-17}
+ & \multicolumn{4}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{4}{c|}{\textit{\textbf{Warsaw}}} \\
+ \cline{2-17} &
+\multicolumn{1}{c|} {\textbf{$T_{1}$}} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} \\ \hline
+\multicolumn{1}{|l|}{\textbf{SM}} & 5.78 & 3.40 & \textbf{2.35} & \textbf{2.23} & 7.19 & 3.26 & \textbf{2.26} & 1.85 & 4.43 & 2.73 & 1.81 & 1.67 & 10.49 & 7.04 & 1.84 & 1.66 \\ \hline
+\multicolumn{1}{|l|}{\textbf{DSMI}} & 5.75 & 3.56 & 2.19 & 2.10 & 6.74 & 4.16 & 2.21 & \textbf{1.86} & 4.37 & 2.65 & 1.71 & 1.56 & 10.46 & 6.66 & 1.89 & 1.62 \\ \hline
+\multicolumn{1}{|l|}{\textbf{FCE}} & 6.87 & 3.97 & 1.99 & 2.01 & \textbf{9.96} & 6.06 & 1.66 & 1.29 & \textbf{16.48} & 5.65 & 2.73 & \textbf{2.65} & \textbf{11.44} & \textbf{8.83} & \textbf{2.44} & \textbf{2.03} \\ \hline
+\multicolumn{1}{|l|}{\textbf{DM}} & \textbf{7.68} & \textbf{4.22} & 1.70 & 1.68 & 9.42 & \textbf{6.49} & 1.74 & 1.55 & 16.26 & \textbf{6.48} & \textbf{2.84} & 2.63 & 11.04 & 8.09 & 2.29 & 1.79 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Valores calculados para \textit{\acrshort{d'}} nas imagens com ruídos.}
+\label{tab:experimentos:d:com_ruido}
+\tabcolsep=0.04cm
+\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-17}
+ & \multicolumn{4}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{4}{c|}{\textit{\textbf{Warsaw}}} \\
+ \cline{2-17} &
+\multicolumn{1}{c|} {\textbf{$T_{1}$}} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} \\ \hline
+\multicolumn{1}{|l|}{\textbf{SM}} & 5.70 & 3.48 & 2.13 & 1.94 & 6.57 & 3.86 & \textbf{2.29} & \textbf{1.92} & 3.99 & 2.67 & 1.68 & 1.48 & 7.38 & 4.70 & 1.88 & 1.42 \\ \hline
+\multicolumn{1}{|l|}{\textbf{DSMI}} & 6.10 & 3.86 & 2.34 & 2.17 & 6.74 & 4.16 & 2.21 & 1.86 & 4.09 & 2.67 & 1.62 & 1.41 & 7.62 & 4.82 & 2.06 & 1.56 \\ \hline
+\multicolumn{1}{|l|}{\textbf{FCE}} & \textbf{7.24} & \textbf{4.13} & 1.91 & 1.82 & 8.33 & 5.06 & 1.72 & 1.45 & \textbf{8.10} & \textbf{3.96} & 2.39 & 2.26 & \textbf{8.43} & \textbf{5.16} & 2.26 & 1.31 \\ \hline
+\multicolumn{1}{|l|}{\textbf{DM}} & 6.51 & 4.10 & \textbf{2.37} & \textbf{2.18} & \textbf{9.42} & \textbf{6.49} & 1.74 & 1.55 & 7.29 & 3.86 & \textbf{2.61} & \textbf{2.42} & 7.82 & 5.04 & \textbf{2.44} & \textbf{1.95} \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{\textit{\acrfull{GDL}}}
+
+\par Introduzir o que é \cite{daugman2000}
+
+\par Ilustrar os gráficos
+
+\par Analisar

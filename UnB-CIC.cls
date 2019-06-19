@@ -967,7 +967,7 @@
         \begin{subfigure}{#2}
           \centering
           \includegraphics[#3]{\tempb}
-        %   \caption[\tempe.]{\tempe\ifx#4\empty\else~(Fonte: ~\cite{#4})\fi.\label{\temph}
+        %   \caption[\tempe.]{\tempe\ifx#4\empty\e``````````                                                lse~(Fonte: ~\cite{#4})\fi.\label{\temph}
           \caption{\tempe.}\label{\temph}
         \end{subfigure}%
         \begin{subfigure}{#2}
