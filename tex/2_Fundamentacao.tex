@@ -93,8 +93,8 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 \par Sistemas biométricos tipicamente consistem em dois métodos \cite{wayman2005biometric}:
 
 \begin{itemize}
-    \item Verificação (\textit{Intraclasse}): Usuário informa quem é, insere sua característica biométrica e então comparações são feitas apenas entre as características registradas do usuário com a inserida, verificando se há ou não correspondência;
-    \item Identificação (\textit{Interclasse}): Usuário insere sua característica biométrica e é comparada com todas as registradas no sistema, verificando se há ou não correspondência.
+    \item Verificação: Usuário informa quem é, insere sua característica biométrica e então comparações são feitas apenas entre as características registradas do usuário com a inserida, verificando se há ou não correspondência;
+    \item Identificação: Usuário insere sua característica biométrica e é comparada com todas as registradas no sistema, verificando se há ou não correspondência com alguma dependendo da regra adotada pelo sistema.
 \end{itemize}
 
 \par Os métodos não precisam ser usados individualmente, podendo haver sistemas híbridos, mas em sistemas negativos, apenas o método de identificação é possível \cite{wayman2005biometric}.
@@ -451,7 +451,7 @@ Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câme
 
 \par Imagens \textit{\arcshort{LV}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{LV}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
 
-\figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{LV}} (Fonte: \cite{trokielwicz2016-Warsaw})}{Pigmentação escura)}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.6\linewidth}}
+\figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{LV}} (Fonte: \cite{trokielwicz2016-Warsaw})}{Pigmentação escura}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.6\linewidth}}
 
 \figuraBib[ht!]{img/Fundamentacao/iris_nir_daugman}{Imagem de íris \textit{\arcshort{NIR}}}{nirDaugman}{fig:iris_nir}{width=0.3\textwidth}%
 
