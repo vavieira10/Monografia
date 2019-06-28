@@ -212,6 +212,8 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par O filtro \textit{Desvio Padrão Local} consiste em um filtro de domínio espacial que calcula o desvio padrão local de cada \textit{pixel} da imagem de entrada \cite{stdfilt}. O filtro \textit{Variância Local} é, portanto, uma variação do filtro de \textit{Desvio Padrão Local}, que calcula a variância ao invés do desvio padrão.
 
+\figura[htp]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.25\textwidth}
+
 \par O filtro de \textit{Variância Local} consiste em calcular a variância da vizinhança, dado um elemento estruturante, ao redor do \textit{pixel} de entrada e atribuí-la ao \textit{pixel} de saída, conforme a equação:
 
 \equacao{eq:stdfilt}{I_{saida}(x,y) = \frac{1}{N}\sum_{i=1}^{N}(v_{i}^{I_{entrada}(x,y)} - \mu)^2}
@@ -220,9 +222,9 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. A \refFig{fig:stdfilt:entrada} ilustra uma imagem de entrada e a \refFig{fig:filtros} os resultados da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
 
-\figurasDuplas{b!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.5\textwidth}{width=.6\linewidth}}
 
-\figura[H]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.2\textwidth}
+\figurasDuplas{b!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.4\textwidth}{width=\linewidth}}
+
 
 % \begin{figure}[!h]
 %   \centering
