@@ -11,7 +11,7 @@
 #1\end{minipage}}%
 \\\vspace{\baselineskip}}%
 
-\par Este capítulo introduz e explica todos os conceitos teóricos necessários para o entendimento do projeto proposto. Explica o que é biometria, o que são sistemas biométricos, o que é processamento de imagens no domínio espacial, processamento morfológico de imagens, filtragem em imagens e sistemas de reconhecimento de íris.
+\par Este capítulo introduz e detalha todos os conceitos teóricos necessários para o entendimento do projeto proposto. Descreve o que é biometria, o que são sistemas biométricos, o que é processamento de imagens no domínio espacial, processamento morfológico de imagens, filtragem em imagens e sistemas de reconhecimento de íris.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,24 +60,26 @@ formatos. Algumas das características físicas mais utilizadas são:
     \item Acessibilidade: Característica que pode ser facilmente adquirida por meio de sensores.
 \end{enumerate}
 
-\par A \refTab{tab:fundamentacao:biometria:criterio} ilustra a comparação feita das características listadas na Seção \ref{sec:fundamentacao:biometria:caracteristicas} com os cinco critérios enumerados acima \cite{mali2013}.
+\par Além dos cinco fatores descritos acima, a escolha da característica biométrica a ser usada em um sistema depende da aplicação a ser usada, fatores geográficos e das dificuldades para sua implementação, ficando a critério do seu projetista \cite{wayman2005biometric}.
 
-\tabela{Comparação das características biométricas}{tab:fundamentacao:biometria:criterio}{|l|l|l|l|l|l|}{
-\hline
-\textbf{Biometria} & \textbf{1 - Aceit.} & \textbf{2 - Rob.} & \textbf{3 - Dispon.} & \textbf{4 - Distint.} & \textbf{5 - Acess.} \\ \hline
-Impressão digital & Médio & Alto & Médio & Alto & Médio \\ \hline
-Íris & Baixo & Alto & Alto & Alto & Médio \\ \hline
-Rosto & Alto & Médio & Alto & Baixo & Alto \\ \hline
-Formato das mãos & Médio & Médio & Médio & Médio & Alto \\ \hline
-Veias das Mãos & Médio & Médio & Médio & Médio & Médio \\ \hline
-Formato da orelha & Alto & Alto & Alto & Médio & Médio \\ \hline
-Retina & Baixo & Médio & Alto & Alto & Baixo \\ \hline
-Assinatura & Alto & Baixo & Baixo & Baixo & Alto \\ \hline
-Forma de caminhar & Alto & Baixo & Médio & Baixo & Alto \\ \hline
-Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
-}
+% \par A \refTab{tab:fundamentacao:biometria:criterio} ilustra a comparação feita das características listadas na Seção \ref{sec:fundamentacao:biometria:caracteristicas} com os cinco critérios enumerados acima \cite{mali2013}.
 
-\par Pela tabela, pode-se afirmar que cada característica biométrica apresenta aspectos positivos e negativos para cada critério. A íris é uma característica biométrica que todo ser humano possui, com pouca ou nenhuma chance de sofrer mudanças ao longa da vida, tem uma probabilidade quase nula de apresentar padrões parecidos em diferentes indivídos e que pode ser capturada de forma acessível, apesar da sua baixa aceitabilidade. A forma de caminhar é facilmente acessível, por meio de vídeos, e tem grande aceitabilidade entre indivíduos, mas problemas de saúde ou acidentes atrapalham na sua robustez, disponibilidade e distintivade. A voz possui boa aceitabilidade e acessibilidade porque basta um microfone para capturá-la, mas, como citado na Seção \ref{sec:fundamentacao:biometria:caracteristicas}, fatores como humor, saúde e geografia influenciam negativamente em sua robustez, disponibilidade e distintividade. Portanto, a escolha da característica biométrica a ser usada em um sistema depende da aplicação a ser usada, fatores geográficos e das dificuldades para sua implementação, ficando a critério do seu projetista \cite{wayman2005biometric}.
+% \tabela{Comparação das características biométricas}{tab:fundamentacao:biometria:criterio}{|l|l|l|l|l|l|}{
+% \hline
+% \textbf{Biometria} & \textbf{1 - Aceit.} & \textbf{2 - Rob.} & \textbf{3 - Dispon.} & \textbf{4 - Distint.} & \textbf{5 - Acess.} \\ \hline
+% Impressão digital & Médio & Alto & Médio & Alto & Médio \\ \hline
+% Íris & Baixo & Alto & Alto & Alto & Médio \\ \hline
+% Rosto & Alto & Médio & Alto & Baixo & Alto \\ \hline
+% Formato das mãos & Médio & Médio & Médio & Médio & Alto \\ \hline
+% Veias das Mãos & Médio & Médio & Médio & Médio & Médio \\ \hline
+% Formato da orelha & Alto & Alto & Alto & Médio & Médio \\ \hline
+% Retina & Baixo & Médio & Alto & Alto & Baixo \\ \hline
+% Assinatura & Alto & Baixo & Baixo & Baixo & Alto \\ \hline
+% Forma de caminhar & Alto & Baixo & Médio & Baixo & Alto \\ \hline
+% Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
+% }
+
+% \par Pela tabela, pode-se afirmar que cada característica biométrica apresenta aspectos positivos e negativos para cada critério. A íris é uma característica biométrica que todo ser humano possui, com pouca ou nenhuma chance de sofrer mudanças ao longa da vida, tem uma probabilidade quase nula de apresentar padrões parecidos em diferentes indivíduos e que pode ser capturada de forma acessível, apesar da sua baixa aceitabilidade. A forma de caminhar é facilmente acessível, por meio de vídeos, e tem grande aceitabilidade entre indivíduos, mas problemas de saúde ou acidentes atrapalham na sua robustez, disponibilidade e distintivade. A voz possui boa aceitabilidade e acessibilidade porque basta um microfone para capturá-la, mas, como citado na Seção \ref{sec:fundamentacao:biometria:caracteristicas}, fatores como humor, saúde e geografia influenciam negativamente em sua robustez, disponibilidade e distintividade. Portanto, a escolha da característica biométrica a ser usada em um sistema depende da aplicação a ser usada, fatores geográficos e das dificuldades para sua implementação, ficando a critério do seu projetista \cite{wayman2005biometric}.
 
 \section{Sistemas biométricos}\label{sec:fundamentacao:sis_bio}
 
@@ -88,12 +90,12 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
     \item Negativas: Amostras submetidas ao sistema pertencem a uma pessoa não registrada.
 \end{enumerate}
 
-\par Sistemas biométricos são implementados para utilizar características biométricas individuais, como íris, impressão digital e reconhecimento facial, ou até mesmo usar várias características ao mesmo tempo e combiná-las \cite{zhou2012,jagadiswary2016}. Sistemas biométricos podem ter diferentes objetivos, e são usados geralmente para procurar por pessoas conhecidas ou desconhecidas ou verificar se a pessoa é ou não é quem afirma que é. Podem ser implementados para diferentes ambientes e situações, como em ambientes externos ou internos, ambientes controlados ou não e com o manuseio ou não de pessoas treinadas para usar o sistema \cite{wayman2005biometric}. Sistemas biométricos são utilizados principalmente para controle de acesso de pessoas em locais ou \textit{smartphones}.
+\par Sistemas biométricos são implementados para utilizar características biométricas individuais, como íris, impressão digital e reconhecimento facial, ou até mesmo usar várias características ao mesmo tempo e combiná-las \cite{zhou2012,jagadiswary2016}. Sistemas biométricos podem ter diferentes objetivos e são usados geralmente para procurar por pessoas conhecidas ou desconhecidas, ou verificar se a pessoa é ou não é quem afirma que é. Podem ser implementados para diferentes ambientes e situações, como em ambientes externos ou internos, ambientes controlados ou não, e com o manuseio ou não de pessoas treinadas para usar o sistema \cite{wayman2005biometric}. Sistemas biométricos são utilizados principalmente para controle de acesso de pessoas em locais ou \textit{smartphones}.
 
 \par Sistemas biométricos tipicamente consistem em dois métodos \cite{wayman2005biometric}:
 
 \begin{itemize}
-    \item Verificação: Usuário informa quem é, insere sua característica biométrica e então comparações são feitas apenas entre as características registradas do usuário com a inserida, verificando se há ou não correspondência;
+    \item Verificação: Usuário se identifica, insere sua característica biométrica e então comparações são feitas apenas entre as características registradas do usuário com a inserida, verificando se há ou não correspondência;
     \item Identificação: Usuário insere sua característica biométrica e é comparada com todas as registradas no sistema, verificando se há ou não correspondência com alguma dependendo da regra adotada pelo sistema.
 \end{itemize}
 
@@ -109,7 +111,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par Módulo de sistemas biométricos responsável por capturar sinais de uma característica biométrica por meio de um sensor eletrônico \cite{wayman2005biometric}. O resultado apresentado pelo sensor, que vai ser posteriormente processado, é a combinação de três fatores: a medida biométrica, a maneira com que a medida é apresentada (imagem, áudio, vídeo) e os parâmetros técnicos do sensor. Se qualquer um dos três fatores sofre modificação, o desempenho do sistema é impactado.
 
-\par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e íris respectivamente.
+\par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e íris, respectivamente.
 
 \figurasDuplas{H}{img/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/irisaccess}{Sensores biométricos de impressão digital e íris}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:iris}{.5\textwidth}{width=.5\textwidth}}
 
@@ -117,9 +119,9 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \subsection{Transmissão}\label{sec:sis_bio:transmissao}
 
-\par Módulo de sistemas biométricos que transmite a característica biométrica capturada pelo sensor no módulo de \textit{Coleta} para ser processada e armazenada \cite{wayman2005biometric}. Esse módulo não precisa estar presente em todo sistema biométrico, apenas os que processam e armazenam os modelos gerados no módulo de \textit{processamento} remotamente.
+\par O módulo de transmissão é responsável por transmitir a característica biométrica capturada pelo sensor no módulo de \textit{Coleta} para ser processada e armazenada \cite{wayman2005biometric}. Esse módulo não precisa estar presente em todo sistema biométrico, apenas os que processam e armazenam os modelos gerados no módulo de \textit{processamento} remotamente.
 
-\par O tamanho dos dados da característica biométrica capturada podem variar, mas geralmente são grandes, e podem causar gargalos na transmissão e ocupar muito espaço de armazenamento. Portanto, técnicas de compressão de dados podem ser aplicadas, para acelerar a transmissão e reduzir o espaço de armazenamento no banco de dados. A compressão, no entanto, introduz desafios, porque causam perda da qualidade dos dados e podem influenciar diretamente nos resultados do módulo de \textit{Processamento} e, consequentemente, no de \textit{decisão}. De forma a reduzir o impacto da compressão, técnicas específicas são aplicadas para cada tipo de característica biométrica.
+\par O tamanho dos dados da característica biométrica capturada podem variar, mas geralmente são grandes, podendo causar gargalos na transmissão e ocupar muito espaço de armazenamento. Portanto, técnicas de compressão de dados podem ser aplicadas, para acelerar a transmissão e reduzir o espaço de armazenamento no banco de dados. A compressão, no entanto, introduz desafios, porque causam perda da qualidade dos dados e podem influenciar diretamente nos resultados do módulo de \textit{Processamento} e, consequentemente, no módulo de \textit{Decisão}. De forma a reduzir o impacto da compressão, técnicas específicas são aplicadas para cada tipo de característica biométrica.
 
 \par A \refFig{fig:sis_bio:transmissao} ilustra as imagens de uma íris e o resultado da sua compressão usando a técnica \textit{JPEG2000}. É observado que a qualidade é inferior e que certas informações e padrões são perdidos.
 
@@ -170,7 +172,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \equacao{eq:espacial:proc_esp}{I_{saida}(x, y) = T[I_{entrada}(x, y)].}
 
-\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:otsu} explicam técnicas de processamento de imagens no domínio espacial.
+\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:otsu} detalham técnicas de processamento de imagens no domínio espacial.
 
 \subsection{\textit{\acrfull{LBP}}}\label{sec:dom_esp:lbp}
 
@@ -188,7 +190,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
        
 \noindent A \refEq{eq:lbp:normal} é aplicada para cada \textit{pixel} da imagem de entrada, onde $g_{c}$ é o valor do \textit{pixel} central da vizinhança sendo calculada, $g_{p}$ o valor do \textit{pixel} dos vizinhos, \textit{P} o total de vizinhos e R o raio da vizinhança. As coordenadas de $g_{p}$ são calculadas pela fórmula ($Rcos(2 \pi p/P)$, $Rsen(2 \pi p/P)$). 
 
-\par O histograma de textura é calculado de acordo com a equação 
+\par O histograma de textura é calculado de acordo com a equação \refEq{eq:lbp:histograma}: 
 \equacao{eq:lbp:histograma}{H(k) = \sum_{i=1}^{I}\sum_{j=1}^{J}f(LBP_{P,R}(i,j),k), k \in [0, K], \\
     f(x,y) = \begin{cases}
      1 & x = y \\ 
@@ -212,32 +214,34 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par O filtro \textit{Desvio Padrão Local} consiste em um filtro de domínio espacial que calcula o desvio padrão local de cada \textit{pixel} da imagem de entrada \cite{stdfilt}. O filtro \textit{Variância Local} é, portanto, uma variação do filtro de \textit{Desvio Padrão Local}, que calcula a variância ao invés do desvio padrão.
 
-\figura[htp]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.25\textwidth}
+\par O filtro de \textit{Variância Local} consiste em calcular a variância da vizinhança, dado um elemento estruturante, ao redor do \textit{pixel} de entrada e atribuí-la ao \textit{pixel} de saída, conforme a \refEq{eq:stdfilt}:
 
-\par O filtro de \textit{Variância Local} consiste em calcular a variância da vizinhança, dado um elemento estruturante, ao redor do \textit{pixel} de entrada e atribuí-la ao \textit{pixel} de saída, conforme a equação:
-
-\equacao{eq:stdfilt}{I_{saida}(x,y) = \frac{1}{N}\sum_{i=1}^{N}(v_{i}^{I_{entrada}(x,y)} - \mu)^2}
+\equacao{eq:stdfilt}{I_{saida}(x,y) = \frac{1}{N}\sum_{i=1}^{N}(v_{i}^{I_{entrada}(x,y)} - \mu)^2,}
 
 \noindent onde N é o número total de vizinhos sendo considerados, $v_{i}^{I_{entrada}(x,y)}$ são os valores de cada vizinho e $\mu$ a média da vizinhança. $I_{saida}(x,y)$ e $I_{entrada}(x,y)$ são o valor do \textit{pixel} em determinada posição, x e y, das imagens de entrada e saída, respectivamente. Essa operação é feita em todos os \textit{pixels} da imagem de entrada.
 
 \par O filtro \textit{Desvio Padrão Local} é útil para encontrar bordas de objetos em imagens. A \refFig{fig:stdfilt:entrada} ilustra uma imagem de entrada e a \refFig{fig:filtros} os resultados da filtragem dessa imagem pelos filtros de desvio padrão e variância, respectivamente.
 
 
-\figurasDuplas{b!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.4\textwidth}{width=\linewidth}}
+% \figurasDuplas{h!}{img/Fundamentacao/stdfilt_std}{img/Fundamentacao/stdfilt_var}{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}}{Com filtro \textit{Desvio Padrão Local}}{Com filtro \textit{Variância Local}}{fig:filtros}{fig:stdfilt:std}{{fig:stdfilt:var}{.4\textwidth}{width=\linewidth}}
 
+\figura[h!]{img/Fundamentacao/stdfilt_entrada}{Imagem de entrada}{fig:stdfilt:entrada}{width=0.18\textwidth}
 
-% \begin{figure}[!h]
-%   \centering
-%   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/Fundamentacao/stdfilt_std}
-%     \caption{Resultado da filtragem pelo filtro \textit{Desvio Padrão Local}}\label{fig:stdfilt:std}
-%   \end{minipage}
-%   \hfill
-%   \begin{minipage}[b]{0.4\textwidth}
-%     \includegraphics[width=\textwidth]{img/Fundamentacao/stdfilt_var}
-%     \caption{Resultado da filtragem pelo filtro \textit{Variância Local}}\label{fig:stdfilt:var}
-%   \end{minipage}
-% \end{figure}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.6\linewidth]{img/Fundamentacao/stdfilt_std.jpg}
+  \caption{Com filtro \textit{Desvio Padrão Local}.}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.6\linewidth]{img/Fundamentacao/stdfilt_var.jpg}
+  \caption{Com filtro \textit{Variância Local}}
+\end{subfigure}
+\caption{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}.}
+\label{fig:filtros}
+\end{figure}
 
 \FloatBarrier
 
@@ -258,37 +262,39 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
     \item Escolher o limiar \textit{T} de forma que seja a maior variância calculada.
 \end{enumerate}
 
-\equacao{eq:otsu:1}{\omega_{1}(t) = \sum_{i=0}^{t-1}p(i)}
+\equacao{eq:otsu:1}{\omega_{1}(t) = \sum_{i=0}^{t-1}p(i),}
 
-\equacao{eq:otsu:2}{\omega_{2}(t) = \sum_{i=t}^{L-1}p(i)}
+\equacao{eq:otsu:2}{\omega_{2}(t) = \sum_{i=t}^{L-1}p(i),}
 
-\equacao{eq:otsu:3}{\sigma_{b}^{2}(t) = \omega_{1}(t)\omega_{2}(t)(\mu_{1} - \mu_{2})^2}
+\equacao{eq:otsu:3}{\sigma_{b}^{2}(t) = \omega_{1}(t)\omega_{2}(t)(\mu_{1} - \mu_{2})^2,}
 
-\equacao{eq:otsu:4}{\mu_{1}(t) = \frac{1}{\omega_{1}(t)}\sum_{i=0}^{t-1}ip(i)}
+\equacao{eq:otsu:4}{\mu_{1}(t) = \frac{1}{\omega_{1}(t)}\sum_{i=0}^{t-1}ip(i),}
 
-\equacao{eq:otsu:5}{\mu_{2}(t) = \frac{1}{\omega_{2}(t)}\sum_{i=t}^{L-1}ip(i)}
+\equacao{eq:otsu:5}{\mu_{2}(t) = \frac{1}{\omega_{2}(t)}\sum_{i=t}^{L-1}ip(i),}
 
 \noindent onde $\omega_{1}(t)$ e $\omega_{2}(t)$ são as probabilidades de cada classe; $\sigma_{b}^{2}(t)$ a variância entre as duas classes; e $\mu_{1}(t)$ e $\mu_{2}(t)$ as médias das classes.
 
 \par Sua principal aplicação é em processamento de imagens, e consiste em binarizar imagens em escala de cinza. A binarização é feita calculando o histograma da imagem e então encontrando o limiar (intensidade de \textit{pixel}) que melhor separa o fundo e o primeiro plano das imagens \cite{gonsalez2006}. A \refFig{fig:otsu} ilustra imagens antes e depois da binarização utilizando o método \textit{Otsu}.
 
-\figurasDuplas{h!}{img/Fundamentacao/stdfilt_entrada}{img/Fundamentacao/otsu_binaria}{Processo de binarização de imagens utilizando o método \textit{Otsu}}{Imagem original}{Imagem binarizada}{fig:otsu}{fig:otsu:org}{{fig:otsu:bin}{.5\textwidth}{width=.5\textwidth}}
+% \figurasDuplas{h!}{img/Fundamentacao/stdfilt_entrada}{img/Fundamentacao/otsu_binaria}{Processo de binarização de imagens utilizando o método \textit{Otsu}}{Imagem original}{Imagem binarizada}{fig:otsu}{fig:otsu:org}{{fig:otsu:bin}{.5\textwidth}{width=.5\textwidth}}
 
-% \begin{figure}[h!]
-% \centering
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/stdfilt_entrada.png}
-%   \caption{Imagem antes da binarização.}
-% \end{subfigure}%
-% \begin{subfigure}{.5\textwidth}
-%   \centering
-%   \includegraphics[width=.5\linewidth]{img/Fundamentacao/otsu_binaria.png}
-%   \caption{Imagem binarizada.}
-% \end{subfigure}
-% \caption{Processo de binarização de imagens.}
-% \label{fig:otsu}
-% \end{figure}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{img/Fundamentacao/stdfilt_entrada.png}
+  \caption{Imagem original.}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{img/Fundamentacao/otsu_binaria.png}
+  \caption{Imagem binarizada.}
+\end{subfigure}
+\caption{Processo de binarização de imagens utilizando o método \textit{Otsu}.}
+\label{fig:otsu}
+\end{figure}
+
+\FloatBarrier
 
 \section{Processamento Morfológico de Imagens}\label{sec:morf}
 
@@ -340,17 +346,17 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par Filtros são processos que modificam sinais de entrada. Como imagens são sinais, o processo de filtrar imagens consiste em modificá-las \cite{gonsalez2006}. Filtros podem ser usados para remover componentes indesejados, realçar componentes desejados ou até para extrair informações ou atributos do sinais sendo processados \cite{loggabor-kovesi}.
 
-\par Imagens podem ser filtradas tanto no domínio do espaço quanto da frequência. A filtragem no domínio espacial consiste em realizar o processo de convolução \textit{2D} por meio de filtros espaciais, chamados de máscaras ou \textit{kernel}\cite{oppenheim2013signals}. A convolução \textit{2D} pode ser representada matemáticamente pela equação
+\par Imagens podem ser filtradas tanto no domínio do espaço quanto da frequência. A filtragem no domínio espacial consiste em realizar o processo de convolução \textit{2D} por meio de filtros espaciais, chamados de máscaras ou \textit{kernel}\cite{oppenheim2013signals}. A convolução \textit{2D} pode ser representada matematicamente pela \refEq{eq:filtragem:convolucao}:
 
-\equacao{eq:filtragem:convolucao}{g(x,y) = \sum_{s=-a}^{a}\Bigg(\sum_{t=-b}^{b}H(s,t)I(x-s,y-t)\Bigg)}
+\equacao{eq:filtragem:convolucao}{g(x,y) = \sum_{s=-a}^{a}\Bigg(\sum_{t=-b}^{b}H(s,t)I(x-s,y-t)\Bigg),}
 
-\noindent onde $g$ é a convolução, $H$ o \textit{kernel} e $I$ a imagem sendo filtrada\cite{gonsalez2006}. A equação
+\noindent onde $g$ é a convolução, $H$ o \textit{kernel} e $I$ a imagem sendo filtrada\cite{gonsalez2006}. A \refEq{eq:filtragem:convolucao_simplificada}
 
-\equacao{eq:filtragem:convolucao_simplificada}{g = I*H}
+\equacao{eq:filtragem:convolucao_simplificada}{g = I*H,}
 
-\noindent é a versão simplificada da \refEq{eq:filtragem:convolucao}.
+\noindent é a definição do operador de convolução.
 
-\par Já a filtragem no domínio da frequência, consiste apenas na multiplicação da imagem e do \textit{kernel} transformados para o domínio da frequência pela \textit{Transformada de Fourier} (\textit{F(.)}) \cite{gonsalez2006}. A equação
+\par Já a filtragem no domínio da frequência, consiste apenas na multiplicação da imagem e do \textit{kernel} transformados para o domínio da frequência pela \textit{Transformada de Fourier} (\textit{F(.)}) \cite{gonsalez2006}. A \refEq{eq:filtragem:relacao}
 
 \equacao{eq:filtragem:relacao}{I*H \iff F(I) \cdot F(H)}
 
@@ -362,9 +368,9 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par O filtro \textit{Log-Gabor} é uma adaptação do filtro \textit{Gabor}, mas na escala logarítmica, e é um filtro linear passa banda \cite{field1987-loggabor, masek2003}. Possui duas características que o diferem: não possui componentes \textit{DC} e não pode ser representado por uma máscara no domínio do espaço, de forma que é exclusivo ao domínio da frequência \cite{loggabor-kovesi}. Assim como o filtro \textit{Gabor}, é muito utilizado para a extração de atributos e codificação de íris \cite{masek2003}.
 
-\par A função de ativação do filtro \textit{Log-Gabor} é representada pela equação
+\par A função de ativação do filtro \textit{Log-Gabor} é representada pela \refEq{eq:filtragem:loggabor}:
 
-\equacao{eq:filtragem:loggabor}{H(\omega) = e^{\frac{-log(\omega/\omega_{0})^{2}}{2log(\sigma)^{2}}}}
+\equacao{eq:filtragem:loggabor}{H(\omega) = e^{\frac{-log(\omega/\omega_{0})^{2}}{2log(\sigma)^{2}}},}
 
 \noindent  onde $\sigma$ controla a largura de banda e $\omega_{0}$ a frequência central do filtro. Já a \refFig{fig:loggabor}, ilustra a função de ativação do filtro na escala linear.
 
@@ -397,7 +403,7 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
     \item A dilatação da pupila pode eliminar alguns padrões da íris.
 \end{itemize}
 
-\par A Seção \ref{sec:iris:olho} explica o que é a íris e suas funções; a Seção \ref{sec:iris:nir_vl} explica as diferenças, as vantagens e desvantagens do uso de imagens de olho \textit{\acrfull{NIR}} e \textit{\acrfull{LV}} em sistemas de reconhecimento de íris; e por fim, a Seção \ref{sec:iris:rec_iris} explica como algoritmos de reconhecimento de íris funcionam.
+\par A Seção \ref{sec:iris:olho} define a estrutura da íris e suas funções; a Seção \ref{sec:iris:nir_vl} discute as diferenças, as vantagens e desvantagens do uso de imagens de olho \textit{\acrfull{NIR}} e \textit{\acrfull{LV}} em sistemas de reconhecimento de íris; e por fim, a Seção \ref{sec:iris:rec_iris} explica como algoritmos de reconhecimento de íris funcionam.
 
 \subsection{Olho humano}\label{sec:iris:olho}
 
@@ -409,7 +415,25 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 \par Com a probabilidade de 1 em $10^{72}$ de existirem padrões de íris iguais e não modificarem ao longo da vida, é considerada um dos melhores tipos de biometria \cite{iris_UFRJ}.
 
-\figurasDuplas{h!}{img/Fundamentacao/iris_direita}{img/Fundamentacao/iris_esquerda}{Diferança das íris do olho humano (Fonte: \cite{trokielwicz2016-Warsaw})}{Íris do olho direito}{íris do olho esquerdo}{fig:olhos}{fig:iris_direita}{{fig:iris_esquerda}{.5\textwidth}{width=.5\textwidth}}
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_direita}
+  \caption{Íris do olho direito.}\label{fig:iris_direita}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{img/Fundamentacao/iris_esquerda}
+  \caption{Íris do olho esquerdo.}\label{fig:iris_esquerda}
+\end{subfigure}
+\caption{Diferença das íris do olho humano (Fonte: \cite{trokielwicz2016-Warsaw}).}
+\label{fig:olhos}
+\end{figure}
+
+% \figurasDuplas{h!}{img/Fundamentacao/iris_direita}{img/Fundamentacao/iris_esquerda}{}{Íris do olho direito}{íris do olho esquerdo}{fig:olhos}{fig:iris_direita}{{fig:iris_esquerda}{.5\textwidth}{width=.5\textwidth}}
+
+\FloatBarrier
 
 % \begin{figure}[h!]
 % \centering
@@ -448,14 +472,16 @@ Voz & Alto & Baixo & Médio & Baixo & Médio \\ \hline
 
 Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câmeras fotográficas comuns, que possuem comprimento de onda no intervalo 430-790 \textit{nm} no espectro eletromagnético, e é o intervalo perceptível pelo olho humano \cite{gonsalez2006}.
 
-\par Já imagens \arcshort{NIR} são imagens que possuem comprimento de onda no intervalo 800-900 \textit{nm} no espectro eletromagnético \cite{gonsalez2006}. O olho humano não é capaz de perceber esse intervalo no espectro eletromagnético, mas câmeras fotográficas especiais são capazes de capturá-las e registrá-las, de forma que possibilitam o estudo de suas propriedades\cite{nir}.
+\par Já imagens \arcshort{NIR} são imagens que possuem comprimento de onda no intervalo 800-900 \textit{nm} no espectro eletromagnético \cite{gonsalez2006}. O olho humano não é capaz de perceber esse intervalo no espectro eletromagnético, mas câmeras fotográficas especiais são capazes de capturá-las e registrá-las, de forma que possibilitam o estudo de suas propriedades \cite{nir}.
 
 
-\par Imagens \textit{\arcshort{LV}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As \refFigs{fig:pigmentacoes}{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{LV}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
+\par Imagens \textit{\arcshort{LV}} de íris ilustram todas as suas possíveis variações de cores, citadas na Seção \ref{sec:iris:olho}. Porém, alguns dos padrões da íris acabam sendo perdidos ou tendo qualidade ruim, especialmente de íris de cores mais escuras, já que os padrões também apresentam coloração escura. Imagens de íris \arcshort{NIR} diminuem o efeito dos reflexos e da perda de padrões em imagens de íris escuras, além de destacarem os padrões da íris \cite{abdullah2015}. Por conta dessas propriedades, imagens \arcshort{NIR} são as mais utilizadas em sistemas de reconhecimento de íris \cite{daugman2004}. As Figuras \ref{fig:pigmentacoes} e \ref{fig:iris_nir} ilustram imagens de íris \textit{\arcshort{LV}} com pigmentação escura e clara, e imagem de íris \textit{\arcshort{NIR}}, respectivamente.
 
 \figurasDuplas{ht!}{img/Fundamentacao/iris_vl_escura}{img/Fundamentacao/iris_vl_clara}{Imagens de íris \textit{\acrshort{LV}} (Fonte: \cite{trokielwicz2016-Warsaw})}{Pigmentação escura}{Pigmentação clara}{fig:pigmentacoes}{fig:iris_vl_escura}{{fig:iris_vl_clara}{.5\textwidth}{width=.6\linewidth}}
 
 \figuraBib[ht!]{img/Fundamentacao/iris_nir_daugman}{Imagem de íris \textit{\arcshort{NIR}}}{nirDaugman}{fig:iris_nir}{width=0.3\textwidth}%
+
+\FloatBarrier
 
 \subsection{Reconhecimento de íris} \label{sec:iris:rec_iris}
 
@@ -470,10 +496,10 @@ Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câme
     \item Normalizar a íris.
 \end{enumerate}
 
-\par A maioria dos algoritmos de segmentação utilizam para encontrar as posições centrais e os raios da íris e pupila o \textit{Operador Integro-Diferencial} \cite{daugman2004}. O operador consiste em uma fórmula que detecta as bordas circulares e é usado separadamente para a íris e a pupila. O \textit{Operador Integro-Diferencial} é descrito pela equação
+\par Algoritmos de segmentação geralmente utilizam o \textit{\acrfull{OID}} para encontrar as posições centrais e os raios da íris e pupila \cite{daugman2004}. O operador consiste em uma fórmula que detecta as bordas circulares e é usado separadamente para a íris e a pupila. O \acrshort{OID} é descrito pela \refEq{eq:rec_iris:integro-differential}
 
 \equacao{eq:rec_iris:integro-differential}{
-    max_{(r,x_{0},y_{0})}\Big|G_{\sigma}(r)*\frac{\partial}{\partial r}\oint_{r,x_{0},y_{0}}\frac{I(x,y)}{2 \pi r}ds\Big|
+    OID = max_{(r,x_{0},y_{0})}\Big|G_{\sigma}(r)*\frac{\partial}{\partial r}\oint_{r,x_{0},y_{0}}\frac{I(x,y)}{2 \pi r}ds\Big|,
 }
 
 \noindent e é aplicado por toda a imagem até que um formato circular é encontrado, onde $I(x,y$) é a imagem com um olho humano, $2\pi r$ o contorno da imagem, $r$ e $(x_{0}, y_{0})$ o raio e a posição do central da imagem inicialmente e $G_{\sigma}$ é um filtro \textit{Gaussiano} usado para suavizar ruídos.
@@ -490,26 +516,26 @@ Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câme
 
 \figuraBib[ht!]{img/Fundamentacao/iriscode}{Imagem segmentada e seu \textit{IrisCode} gerado}{irisCode}{fig:iriscode}{width=.4\textwidth}
 
-\par As \textit{Wavelets 2D de Gabor} são calculadas pela equação
+\par As \textit{Wavelets 2D de Gabor} são calculadas pela \refEq{eq:rec_iris:2d-gabor-wavelet}:
 \equacao{eq:rec_iris:2d-gabor-wavelet}{
-    h\{Re,Im\} = sgn_{\{Re, Im\}}\int_{\rho}\int_{\phi}I(\rho,\phi)e^{-i\omega(\theta_{0}-\phi)}\cdot e^{-(r_{0}-\rho)^2/\alpha^2}e^{-(\theta_{0}-\phi)^2/\beta^2}\rho d \rho d\phi
+    h\{Re,Im\} = sgn_{\{Re, Im\}}\int_{\rho}\int_{\phi}I(\rho,\phi)e^{-i\omega(\theta_{0}-\phi)}\cdot e^{-(r_{0}-\rho)^2/\alpha^2}e^{-(\theta_{0}-\phi)^2/\beta^2}\rho d \rho d\phi,
 }
 
-\noindent onde $h\{Re,Im\}$ é um valor complexo em que tanto a parte real quanto imaginária pode ser 0 ou 1, dependendo do sinal (\textit{sgn}) da integral; $I(\rho,\phi)$ é a imagem da íris normalizada nas coordenadas polares; $\alpha$ e $\beta$ são parâmetros de tamanho da \textit{wavelet 2D}; $\omega$ a frequência da \textit{wavelet}; e por fim, $r_{0}$ e $\theta_{0}$ são as coordenadas da imagem da íris na coordenada polar sendo calculadas.
+\noindent em que $h\{Re,Im\}$ é um valor complexo em que tanto a parte real quanto imaginária pode ser 0 ou 1, dependendo do sinal (\textit{sgn}) da integral; $I(\rho,\phi)$ é a imagem da íris normalizada nas coordenadas polares; $\alpha$ e $\beta$ são parâmetros de tamanho da \textit{wavelet 2D}; $\omega$ a frequência da \textit{wavelet}; e por fim, $r_{0}$ e $\theta_{0}$ são as coordenadas da imagem da íris na coordenada polar sendo calculadas.
 
-\par Na Seção \ref{sec:sis_bio:decisao}, o módulo de \textit{decisão} de um sistema biométrico é explicado e consiste no cálculo da diferença ou similaridade de dois \textit{templates} gerados no módulo de \textit{processamento} de forma a verificar se há ou não correspondência entre eles.
+\par A Seção \ref{sec:sis_bio:decisao} detalha o módulo de \textit{Decisão} de um sistema biométrico que consiste no cálculo da diferença ou similaridade de dois \textit{templates} gerados no módulo de \textit{Processamento} de forma a verificar se há ou não correspondência entre eles.
 
 \par Em reconhecimento de íris, essa comparação é feita, geralmente, pelo cálculo da diferença entre os \textit{IrisCodes} e as máscaras binárias das imagens normalizadas pela \textit{\acrfull{HD}} fracional \cite{daugman2004}.
 
 
 
-\par O cálculo da \textit{\acrshort{HD}} é feito pela equação
+\par O cálculo da \textit{\acrshort{HD}} é feito pela \refEq{eq:HD}:
 
 \equacao{eq:HD}{
     HD = \frac{\|(códigoA \otimes códigoB) \cap máscaraA \cap máscaraB\|}{\|máscaraA \cap máscaraB\|},
 }
 
-\noindent onde \textit{código} e \textit{máscara} A e B são os códigos e máscaras sendo comparadas; $\otimes$ e $\cap$ são as operações \textit{booleanas} \textit{XOR} e \textit{AND}; e $\| \|$ são as normas dos vetores de \textit{bits}. O resultado dessa equação são valores entre 0 e 1, onde 0 é uma correspondência perfeita \cite{daugman2004}.
+\noindent em que \textit{código} e \textit{máscara} A e B são os códigos e máscaras sendo comparadas; $\otimes$ e $\cap$ são as operações \textit{booleanas} \textit{XOR} e \textit{AND}; e $\| \|$ são as normas dos vetores de \textit{bits}. O resultado dessa equação são valores entre 0 e 1, onde 0 é uma correspondência perfeita \cite{daugman2004}.
 
 % \begin{figure}[h!]
 % \centering

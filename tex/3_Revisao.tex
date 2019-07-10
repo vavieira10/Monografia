@@ -1,21 +1,21 @@
 
 \par Neste capítulo, uma revisão bibliográfica de métricas de qualidade de imagem, imagens biométricas, imagens de íris e da segmentação de íris é feita e os métodos das métricas \textit{\acrfull{DSMI}} e \textit{\acrfull{FCE}} são explicados com detalhes.
 
-\par Este projeto consiste na aplicação de duas métricas de qualidade, \textit{\acrshort{DSMI}} \cite{Jenadeleh_2018_CVPR_Workshops} e \textit{\acrshort{FCE}} \cite{du2010}, e verificar como elas influenciam no desempenho de sistemas de reconhecimento de íris.
+\par Este projeto consiste na aplicação de duas métricas de qualidade, \textit{\acrshort{DSMI}} \cite{Jenadeleh_2018_CVPR_Workshops} e \textit{\acrshort{FCE}} \cite{du2010}, e na verificação de como elas influenciam no desempenho de sistemas de reconhecimento de íris.
 
 \par Qualidade de imagens é um tema que tem grande destaque na comunidade científica, por suas muitas aplicações, como sistemas biométricos, transmissão, compressão, restauração entre outras \cite{zhang2015}. Possui diversos desafios, principalmente porque qualidade é algo subjetivo e sujeito à percepção de seres humanos \cite{xu2016}. 
 
 \par Muitos algoritmos de medição foram implementados tentando objetificar a medição de qualidade de imagens e são separados em três categorias \cite{xu2016}: \textit{\acrfull{FR}, \acrfull{RR}} e \textit{\acrfull{NR}}. Algoritmos \textit{\acrshort{FR}} e \textit{RR} consistem em algoritmos que precisam completa ou parcialmente de uma imagem referência para calcular qualidade de imagens, enquanto algoritmos \textit{\acrshort{NR}} ou \textit{\acrfull{NR-IQA}}, não precisam de imagens referência, de forma que são os mais desafiadores e vantajosos. Neste projeto, foi escolhido usar algoritmos \textit{\acrshort{NR-IQA}}.
 
-\par Pelo desafio e vantagens, grandes avanços têm sido feitos no estudo de algoritmos de qualidade de imagem \textit{\acrshort{NR-IQA}}, como os trabalhos seguintes: Os autores de \cite{moorthy2010} e \cite{liu2014} projetaram os algoritmos \textit{\acrfull{BIQI}} e \textit{\acrfull{SSEQ}}, respectivamente, onde os dois implementam estruturas de dois passos e técnicas de aprendizado de máquinas para calcular a qualidade de imagens \textit{\acrshort{NR}}. Jenadeleh \textit{et al.} \cite{jenadeleh2016, jenadeleh2017} propuseram dois algoritmos \textit{\acrshort{NR-IQA}}, um que utiliza estatísticas para calcular um vetor de atributos com informações de qualidade e usar o vetor para treinar um modelo de aprendizado de máquinas; e outro que calcula a qualidade de imagens baseado em atributos de estatísticas de imagens derivadas de múltiplos domínios e atributos de estética de imagens e os usa para tentar melhorar o desempenho de algoritmos \textit{\acrshort{NR-IQA}} estado da arte. Os autores de \cite{zhang2015} elaboraram um algoritmo \textit{\acrshort{NR-IQA}} que calcula \textit{\acrfull{MVG}} de fragmentos de imagens e os usam para calcular a qualidade de imagens. Todos os algoritmos descritos acima apresentam bom desempenho, mas são limitados por precisarem de rotulações subjetivas e manuais para treinar os modelos de aprendizado de máquinas.
+\par Pelo desafio e vantagens, grandes avanços têm sido feitos no estudo de algoritmos de qualidade de imagem \textit{\acrshort{NR-IQA}}, como os trabalhos seguintes: Os autores de \cite{moorthy2010} e \cite{liu2014} projetaram os algoritmos \textit{\acrfull{BIQI}} e \textit{\acrfull{SSEQ}}, respectivamente, onde os dois implementam estruturas de dois passos e técnicas de aprendizado de máquina para calcular a qualidade de imagens \textit{\acrshort{NR}}. Jenadeleh \textit{et al.} \cite{jenadeleh2016, jenadeleh2017} propuseram dois algoritmos \textit{\acrshort{NR-IQA}}, um que utiliza estatísticas para calcular um vetor de atributos com informações de qualidade e usar o vetor para treinar um modelo de aprendizado de máquina; e outro que calcula a qualidade de imagens baseado em atributos de estatísticas de imagens derivadas de múltiplos domínios e atributos de estética de imagens e os usa para tentar melhorar o desempenho de algoritmos \textit{\acrshort{NR-IQA}} estado da arte. Os autores de \cite{zhang2015} elaboraram um algoritmo \textit{\acrshort{NR-IQA}} que calcula \textit{\acrfull{MVG}} de fragmentos de imagens e os usam para calcular a qualidade de imagens. Todos os algoritmos descritos acima apresentam bom desempenho, mas são limitados por precisarem de rotulações subjetivas e manuais para treinar os modelos de aprendizado de máquina.
 
-\par Algoritmos de métricas de qualidade foram implementados para acessar a qualidade de características biométricas que são representadas em imagens, de forma a melhorar o desempenho de sistemas biométricos. Mohamad \textit{et al.} \cite{mohamad2015} implementaram uma métrica de qualidade de rosto, impressão digital e veias de mãos que consiste no uso de um modelo de aprendizado de máquinas que é alimentado com a combinação de dois tipos de informação: qualidade da imagem e padrões extraídos pelo descritor \textit{\acrshort{SIFT}} \cite{lowe2004}. Os autores de \cite{sharma2017} propuseram um algoritmo de qualidade de imagens de impressão digital, que usa um modelo de aprendizado de máquinas para detectar rótulos de qualidade da impressão digital e calcular uma nota para sua qualidade. Wasnik \textit{et al.} \cite{wasnik2017} implementaram uma métrica de qualidade de imagens de rosto baseado em densidade de bordas verticais para fotos de \textit{smartphones}.
+\par Algoritmos de métricas de qualidade foram implementados para acessar a qualidade de características biométricas que são representadas em imagens, de forma a melhorar o desempenho de sistemas biométricos. Mohamad \textit{et al.} \cite{mohamad2015} implementaram uma métrica de qualidade de rosto, impressão digital e veias de mãos que consiste no uso de um modelo de aprendizado de máquina que é alimentado com a combinação de dois tipos de informação: qualidade da imagem e padrões extraídos pelo descritor \textit{\acrshort{SIFT}} \cite{lowe2004}. Os autores de \cite{sharma2017} propuseram um algoritmo de qualidade de imagens de impressão digital, que usa um modelo de aprendizado de máquina para detectar rótulos de qualidade da impressão digital e calcular uma nota para sua qualidade. Wasnik \textit{et al.} \cite{wasnik2017} implementaram uma métrica de qualidade de imagens de rosto baseado em densidade de bordas verticais para fotos de \textit{smartphones}.
 
-\par Com o objetivo de melhorar o desempenho de sistemas de reconhecimento de íris, métricas de qualidade de íris foram implementadas. Podem medir a qualidade de uma imagem de íris ou a qualidade da etapa de segmentação.
+\par Com o objetivo de melhorar o desempenho de sistemas de reconhecimento de íris, métricas de qualidade foram implementadas. Essas métricas de qualidade podem medir a qualidade de uma imagem de íris ou a qualidade da etapa de segmentação.
 
-\par Os algoritmos implementados por \cite{daugman2004, starovoitov2013-DSMI-45, wan2007-DSMI-50} consistem em métricas de qualidade de imagens de íris considerando ruídos relacionados ao foco da imagem; o algoritmo \cite{bergmller2017-DSMI-2} consiste na proposta de uma métrica para avaliar os efeitos de compressão \textit{JPEG} e evitá-los; o algoritmo \cite{chen2013-DSMI-4} propõe uma métrica que avalia a nitidez de imagens de íris usando o operador \textit{Brenner} em \textit{\acrfull{ROI}} definidas. Pelos algoritmos \cite{daugman2004, starovoitov2013-DSMI-45, wan2007-DSMI-50,bergmller2017-DSMI-2,chen2013-DSMI-4} funcionarem apenas para tipos específicos de ruídos, são limitados. Kalka \textit{et al.} \cite{kalka2010-DSMI-18} e Li \textit{et al.} \cite{li2011} implementaram métricas de qualidade de imagens de íris que consideram ruídos como desfoco, reflexo e imagens sem ângulo, entre outros. Esses dois algoritmos avaliam um maior número de ruídos, mas foram implementados exclusivamente para imagens de íris \textit{\acrshort{NIR}}. Jenadeleh \textit{et al.} \cite{Jenadeleh_2018_CVPR_Workshops} propuseram uma métrica de qualidade de imagens de íris \textit{\acrshort{LV}}, chamada \textit{\acrshort{DSMI}}, que usa estatísticas de sinal e magnitude da imagem para calcular sua qualidade, considerando os ruídos mais comuns em imagens \textit{\acrshort{LV}} e de íris. O algoritmo apresentou bons resultados em seus testes e demonstrou não possuir limitações como os outros algoritmos descritos acima para avaliar a qualidade de imagens de íris.
+\par Os algoritmos implementados por \cite{daugman2004, starovoitov2013-DSMI-45, wan2007-DSMI-50} consistem em métricas de qualidade de imagens de íris considerando ruídos relacionados ao foco da imagem; o algoritmo \cite{bergmller2017-DSMI-2} consiste na proposta de uma métrica para avaliar os efeitos de compressão \textit{JPEG} e evitá-los; o algoritmo \cite{chen2013-DSMI-4} propõe uma métrica que avalia a nitidez de imagens de íris usando o operador \textit{Brenner} em \textit{\acrfull{ROI}} definidas. Pelos algoritmos \cite{daugman2004, starovoitov2013-DSMI-45, wan2007-DSMI-50,bergmller2017-DSMI-2,chen2013-DSMI-4} funcionarem apenas para tipos específicos de ruídos, são considerados limitados. Kalka \textit{et al.} \cite{kalka2010-DSMI-18} e Li \textit{et al.} \cite{li2011} implementaram métricas de qualidade de imagens de íris que consideram ruídos como desfoco, reflexo e imagens sem ângulo, entre outros. Esses dois algoritmos avaliam um maior número de ruídos, mas foram implementados exclusivamente para imagens de íris \textit{\acrshort{NIR}}. Jenadeleh \textit{et al.} \cite{Jenadeleh_2018_CVPR_Workshops} propuseram uma métrica de qualidade de imagens de íris \textit{\acrshort{LV}}, chamada \textit{\acrshort{DSMI}}, que usa estatísticas de sinal e magnitude da imagem para calcular sua qualidade, considerando os ruídos mais comuns em imagens \textit{\acrshort{LV}} e de íris. O algoritmo apresentou bons resultados em seus testes e demonstrou não possuir limitações como os outros algoritmos descritos acima para avaliar a qualidade de imagens de íris.
 
-\par Belcher \textit{et al.} \cite{belcher2008} implementaram o algoritmo \textit{\acrfull{SFIM}} para calcular a qualidade da etapa de segmentação de sistemas de reconhecimento de íris de imagens \textit{\acrshort{NIR}}, que leva em conta fatores como oclusão, dilatação da pupila e a qualidade dos padrões presentes na área da íris segmentada. Assim como a métrica proposta por \cite{belcher2008}, a métrica implementada por \cite{mottalli2009-DSMI-30} calcula a qualidade da etapa de segmentação de sistemas de reconhecimento de íris, por meio da análise de formatos flexíveis para a íris e a pupila. Os autores de \cite{proenca2011} implementaram uma métrica para calcular a qualidade de imagens de íris \textit{\acrshort{LV}} e da sua segmentação, que considera os ruídos de foco, movimento, ângulo, oclusões, dilatação e nível de pigmentação da íris a partir da íris segmentada. Ma \textit{et al.} \cite{ma2003-FIM-7} também calcularam a qualidade da íris por meio do resultado da segmentação, e usaram a distribuição da orientação horizontal de duas subregiões da íris em conjunto com um modelo de aprendizado de máquinas.
+\par Belcher \textit{et al.} \cite{belcher2008} implementaram o algoritmo \textit{\acrfull{SFIM}} para calcular a qualidade da etapa de segmentação de sistemas de reconhecimento de íris de imagens \textit{\acrshort{NIR}}, que leva em conta fatores como oclusão, dilatação da pupila e a qualidade dos padrões presentes na área da íris segmentada. Assim como a métrica proposta por \cite{belcher2008}, a métrica implementada por \cite{mottalli2009-DSMI-30} calcula a qualidade da etapa de segmentação de sistemas de reconhecimento de íris, por meio da análise de formatos flexíveis para a íris e a pupila. Os autores de \cite{proenca2011} implementaram uma métrica para calcular a qualidade de imagens de íris \textit{\acrshort{LV}} e da sua segmentação, que considera os ruídos de foco, movimento, ângulo, oclusões, dilatação e nível de pigmentação da íris a partir da íris segmentada. Ma \textit{et al.} \cite{ma2003-FIM-7} também calcularam a qualidade da íris por meio do resultado da segmentação e usaram a distribuição da orientação horizontal de duas subregiões da íris em conjunto com um modelo de aprendizado de máquina.
 
 \par O algoritmo \textit{\acrshort{FCE}} foi proposto por Du \textit{et al.} \cite{du2010} para corrigir inconsistências presentes na etapa do algoritmo \textit{\acrshort{SFIM}} que calcula a qualidade dos padrões da íris, e apresentou melhorias no desempenho de sistemas de reconhecimento de íris.
 
@@ -29,7 +29,7 @@
 
 \par \textit{\acrfull{DSMI}} é uma métrica de qualidade de imagens de íris cujo objetivo é avaliar se a imagem de entrada de um sistema de reconhecimento de íris é boa o suficiente para a etapa de segmentação \cite{Jenadeleh_2018_CVPR_Workshops}. 
 
-\par A métrica é uma adaptação do algoritmo \textit{\acrfull{CLBP}} \cite{guo2010-CLBP}, e consiste no cálculo de atributos estatísticos locais que dividem a imagem em dois componentes, sinal ($S_{1}$) e magnitude ($S_{2}$), e então os combinam (\textit{S}) de forma a calcular uma nota para uma imagem de íris em \textit{\acrfull{LV}} \cite{Jenadeleh_2018_CVPR_Workshops}.
+\par A métrica é uma adaptação do algoritmo \textit{\acrfull{CLBP}} \cite{guo2010-CLBP} e consiste no cálculo de atributos estatísticos locais que dividem a imagem em dois componentes, sinal ($S_{1}$) e magnitude ($S_{2}$), e então os combinam (\textit{S}) de forma a calcular uma nota para uma imagem de íris em \textit{\acrfull{LV}} \cite{Jenadeleh_2018_CVPR_Workshops}.
 
 \par A imagem de entrada do algoritmo deve ser convertida para escala de cinza e normalizada pela \refEq{eq:dsmi:norm}
 
@@ -39,35 +39,35 @@
 
 \par Os padrões são calculados considerando uma vizinhança de 4 pixels (verticais e horizontais) e considerando todos os \textit{pixels} da imagem, menos os da borda. Nas equações abaixo, $\widehat{I}(r)$ são os \textit{pixels} da imagem sendo processados e $\widehat{I}(v)$ seus vizinhos.
 
-\par O componente de sinal $S_{1}$ consiste no cálculo dos máximos locais da imagem de entrada, conforme a equação:
+\par O componente de sinal $S_{1}$ consiste no cálculo dos máximos locais da imagem de entrada, conforme a \refEq{eq:dsmi:s1} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:s1}{
     S_{1} =
   \begin{cases}
-    1       & \widehat{I}(r) > max(\widehat{I}(v))\\
-    0  &  \text{caso contrário}
+    1,       & \widehat{I}(r) > max(\widehat{I}(v))\\
+    0,  &  \text{caso contrário}
   \end{cases}.
 }
 
-\par O componente de magnitude $S_{2}$ é calculado pela comparação de um limiar \textit{T} com a máxima diferença absoluta dos máximos locais com seus vizinhos segundo a equação:
+\par O componente de magnitude $S_{2}$ é calculado pela comparação de um limiar \textit{T} com a máxima diferença absoluta dos máximos locais com seus vizinhos segundo a \refEq{eq:dsmi:s2} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:s2}{
     S_{2} =
         \begin{cases}
-        1  & T > max(\lvert\widehat{I}(r) - \widehat{I}(v)\rvert)\\
-        0  &  \text{caso contrário}
+        1,  & T > max(\lvert\widehat{I}(r) - \widehat{I}(v)\rvert)\\
+        0,  &  \text{caso contrário}
     \end{cases}.
 }
 
-\noindent O limiar \textit{T} é calculado em toda a imagem normalizada, e consiste na média das diferenças absolutas dos \textit{pixels} que são máximos locais e seus vizinhos, conforme a equação seguinte
+\noindent O limiar \textit{T} é calculado em toda a imagem normalizada, e consiste na média das diferenças absolutas dos \textit{pixels} que são máximos locais e seus vizinhos, conforme a \refEq{eq:dsmi:T} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:T}{
     T = \frac{1}{N}\sum_{m \in M}\lvert\widehat{I}(m) - \widehat{I}(v)\rvert ,
 }
 
-\noindent onde \textit{M} são todos os máximos locais encontrados no cálculo do componente $S_{1}$.
+\noindent em que \textit{M} são todos os máximos locais encontrados no cálculo do componente $S_{1}$.
 
-\par As estatísticas do sinal \textit{$S_{1}$} e magnitude \textit{$S_{2}$} são combinadas na estátistica de coincidência de padrões $S$ pela equação:
+\par As estatísticas do sinal \textit{$S_{1}$} e magnitude \textit{$S_{2}$} são combinadas na estatistica de coincidência de padrões $S$, segundo a \refEq{eq:dsmi:s} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:s}{
     S = S_{1} \cap  S_{2},
@@ -75,28 +75,28 @@
 
 \noindent onde $\cap$ é a operação \textit{booleana} AND.
 
-\par A variância das vizinhanças da imagem é calculada para ser usada no cálculo da qualidade final, conforme a equação:
+\par A variância das vizinhanças da imagem é calculada para ser usada no cálculo da qualidade final, conforme a \refEq{eq:dsmi:var} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:var}{
     \sigma^2 = var\widehat{I}(v).
 }
 
 
-\par A qualidade final da imagem de íris é calculada pela \refEq{eq:dsmi:Q}:
+\par A qualidade final da imagem de íris é calculada pela \refEq{eq:dsmi:Q} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \begin{equation}\label{eq:dsmi:Q}
   Q_{DSMI} = r(\frac{1}{W\cdot H}\sum_{c \in C}\frac{S(c)}{\sigma^2(c) + \delta^2}),
 \end{equation}
 
-\noindent onde C são todos os pixels da imagem, menos as bordas, \textit{W} é a quantidade de colunas, \textit{H} a quantidade de linhas da imagem de entrada, \textit{S} são as estatísticas de sinal e magnitude combinadas, $\sigma^{2}$ a variância da vizinhança de todos os pixels e \textit{r} a função que normaliza a nota da qualidade.
+\noindent onde $c$ são todos os pixels da imagem, menos as bordas, \textit{W} é a quantidade de colunas, \textit{H} a quantidade de linhas da imagem de entrada, \textit{S} são as estatísticas de sinal e magnitude combinadas, $\sigma^{2}$ a variância da vizinhança de todos os pixels e \textit{r} se trata da função que normaliza a nota da qualidade.
 
-\par A função de normalização \textit{r} é definida na seguinte equaçao:
+\par A função de normalização \textit{r} é definida na seguinte \refEq{eq:dsmi:r} \cite{Jenadeleh_2018_CVPR_Workshops}:
 
 \equacao{eq:dsmi:r}{
     r : [0, \infty) \to [0, 1) \quad x \mapsto 1 - e^{-ax},
 }
 
-\noindent onde aos parâmetros $\delta^2$ e \textit{a} são atribuídos os valores 0.00025 e 0.01, respectivamente.
+\noindent onde aos parâmetros $\delta^2$ e \textit{a} são atribuídos os valores 0.00025 e 0.01, respectivamente. Esses valores foram encontrados pelos autores do artigo \cite{Jenadeleh_2018_CVPR_Workshops}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -106,12 +106,12 @@
 
 \par A métrica tem o objetivo de medir a qualidade da segmentação da íris e consiste na fusão de três métricas: métrica da correlação dos atributos, métrica da oclusão e métrica da dilatação da pupila \cite{du2010}.
 
-\par A métrica de correlação dos atributos avalia a qualidade e a distintividade dos padrões presentes na íris segmentada, ao medir a correlação entre os atributos vizinhos usando distância de informação. Possui duas etapas: pré processamento e o cálculo da métrica.
+\par A métrica de correlação dos atributos avalia a qualidade e a distintividade dos padrões presentes na íris segmentada, ao medir a correlação entre os atributos vizinhos usando distância de informação. Possui duas etapas: filtragem e o cálculo da métrica.
 
-\par Inicialmente, a imagem da íris normalizada resultante da etapa de segmentação, passa por uma etapa de pré processamento. Cada linha da imagem é transformada para o domínio da frequência e passa por um processo de filtragem, usando o filtro passa banda \textit{Log-Gabor} unidimensional, que é descrito pela \refEq{eq:filtragem:loggabor}. As linhas são então transformadas de volta para o domínio do espaço.
+\par Inicialmente, a imagem da íris normalizada resultante da etapa de segmentação, passa por uma etapa de filtragem. Cada linha da imagem é transformada para o domínio da frequência e passa por um processo de filtragem, usando o filtro passa banda \textit{Log-Gabor} unidimensional, que é descrito pela \refEq{eq:filtragem:loggabor}. As linhas são então transformadas de volta para o domínio do espaço.
 
 
-\par As operações que são feitas entre duas linhas consecutivas, $\vec{l}_{i}$ e $\vec{l}_{i+1}$, na magnitude da imagem resultante da etapa de pré processamento são descritas nas \refEqs{eq:fce:fcm1}{eq:fce:fcm4}:
+\par As operações que são feitas entre duas linhas consecutivas, $\vec{l}_{i}$ e $\vec{l}_{i+1}$, na magnitude da imagem resultante da etapa de pré processamento são descritas nas \refEqs{eq:fce:fcm1}{eq:fce:fcm4} \cite{du2010}:
 \begin{equation} \label{eq:fce:fcm1}
     \vec{p} = \frac{\vec{l}_{i}}{\sum\vec{l}_{i}},
 \end{equation}
@@ -130,7 +130,7 @@
 
 \noindent onde $\vec{p}$ e $\vec{q}$ são as funções massa de probabilidade das linhas consecutivas da imagem filtrada, $J(\vec{p},\vec{q})$ a distância de informação e $D(\vec{x}\parallel\vec{y})$ a entropia relativa \cite{Mackay2002-RelativeEntropy}.
 
-\par Por fim, a média dessas distâncias de informação é calculada para cada par consecutivo de linhas da imagem filtrada para resultar na medida de correlação dos atributos, conforme a equação
+\par Por fim, a média dessas distâncias de informação é calculada para cada par consecutivo de linhas da imagem filtrada para resultar na medida de correlação dos atributos, conforme a \refEq{eq:fce:fcm5} \cite{du2010}:
 
 \begin{equation}\label{eq:fce:fcm5}
     FCM = \frac{1}{N - 1}\sum_{i}J_{i, i+1},
@@ -138,16 +138,16 @@
 
 \noindent onde \textit{N} é o número de linhas da imagem normalizada. 
 
-\par O cálculo da métrica que avalia a qualidade dos padrões das íris, representado pela \refEq{eq:fce:fcm5}, que foi a mudança feita pelos autores em relação à métrica \textit{\acrshort{SFIM}} \cite{belcher2008}. A métrica \textit{\acrshort{SFIM}} compara elementos das linhas da imagem filtrada nas coordenadas polares com suas distribuições uniformes e selecionam as com maior diferença para o seu cálculo. Essa abordagem causa sensibilidade a elementos introduzidos por técnicas de compressão, fazendo com que notas altas sejam calculadas para imagens comprimidas com qualidade inferior. Portanto, a mudança foi implementada para reduzir os efeitos dos padrões artificiais produzidos pela compressão e deixar a métrica de qualidade final mais robusta.
+\par O cálculo da métrica que avalia a qualidade dos padrões das íris, representado pela \refEq{eq:fce:fcm5}, que foi a mudança feita pelos autores em relação à métrica \textit{\acrshort{SFIM}} \cite{belcher2008}. A métrica \textit{\acrshort{SFIM}} compara elementos das linhas da imagem filtrada nas coordenadas polares com suas distribuições uniformes e selecionam aquelas com maior diferença para o seu cálculo. Essa abordagem causa sensibilidade a elementos introduzidos por técnicas de compressão, fazendo com que notas altas sejam calculadas para imagens comprimidas com qualidade inferior. Portanto, a mudança foi implementada para reduzir os efeitos dos padrões artificiais produzidos pela compressão e deixar a métrica de qualidade final mais robusta.
 
-\par A métrica de oclusão é calculada para minimizar a influência de ruídos com cílios, pálpebra e reflexos no cálculo da qualidade final da segmentação. Usa as máscaras binárias resultantes da etapa de normalização da íris segmentada, conforme a equação
+\par A métrica de oclusão é calculada para minimizar a influência de ruídos com cílios, pálpebra e reflexos no cálculo da qualidade final da segmentação. Esse métrica usa as máscaras binárias resultantes da etapa de normalização da íris segmentada, conforme a \refEq{eq:fce:O} \cite{du2010}
 
 \begin{equation}\label{eq:fce:O}
     O = \frac{\text{Área de ruídos na máscara binária}}{\text{Tamanho total da máscara binária}}.
 \end{equation}
 
 \par A métrica de dilatação é calculada porque a dilatação da pupila pode diminuir a área de íris válida, como ruídos, e influenciar negativamente na qualidade final.
-A medida é calculada pela \refEq{eq:fce:D}:
+A medida é calculada pela \refEq{eq:fce:D} \cite{du2010}:
 
 \begin{equation}\label{eq:fce:D}
     D = \frac{R_{p}}{R_{i}},
@@ -155,13 +155,13 @@ A medida é calculada pela \refEq{eq:fce:D}:
 
 \noindent onde $R_{p}$ e $R_{i}$ são os raios da pupila e íris, respectivamente.
 
-\par A qualidade final é calculada pela combinação das três métricas \textit{FCM, O} e \textit{D}, conforme a equação:
+\par A qualidade final é calculada pela combinação das três métricas \textit{FCM, O} e \textit{D}, conforme a \refEq{eq:fce:Q} \cite{du2010}:
 
 \begin{equation} \label{eq:fce:Q}
     Q_{FCE} = f(FCM) \cdot g(O) \cdot h(D).
 \end{equation}
 
-As \refEqs{eq:fce:normFCM}{eq:fce:normD} descrevem as funções de normalização das métricas:
+As \refEqs{eq:fce:normFCM}{eq:fce:normD} descrevem as funções de normalização das métricas \cite{du2010}:
 
 \begin{equation}\label{eq:fce:normFCM}
   f(FCM) =
@@ -189,5 +189,7 @@ As \refEqs{eq:fce:normFCM}{eq:fce:normD} descrevem as funções de normalizaçã
 \end{equation}
 
 \noindent onde $\gamma = 40$ e $\zeta = 0.6$.
+
+\par Os parâmetros $\beta$ e $\alpha$ da \refEq{eq:fce:normFCM}, $\lambda$ e $\kappa$ da \refEq{eq:fce:normO}, e $\gamma$ e $\zeta$ da \refEq{eq:fce:normD} são encontrados pelos autores do artigo.
 
 \par No próximo capítulo, será explicado a metodologia utilizada para o desenvolvimento do projeto e como as métricas \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}} foram implementadas.
