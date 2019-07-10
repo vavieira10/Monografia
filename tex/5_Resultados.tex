@@ -1,10 +1,10 @@
 
-\par Neste capítulo, são apresentados os experimentos realizados para analisar a arquitetura proposta utilizando as duas métricas de qualidade: \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}. São introduzidos os bancos de imagens de íris \textit{\acrshort{LV}}; os limiares $T_{DSMI}$ e $T_{FCE}$ calculados para os bancos de imagens; os ruídos aplicados nas imagens dos bancos de imagens para os experimentos; os resultados das segmentações de íris usando o algoritmo de segmentação do \textit{OSIRISv4.1}; e, por fim, são apresentados os resultados dos experimentos utilizando três índices de desempenho de sistemas de reconhecimento de íris.
+\par Neste capítulo são apresentados os experimentos realizados para analisar a arquitetura proposta utilizando as duas métricas de qualidade: \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}. São introduzidos os bancos de imagens de íris \textit{\acrshort{LV}}; os limiares $T_{DSMI}$ e $T_{FCE}$ calculados para os bancos de imagens; os ruídos artificiais aplicados nas imagens dos bancos de imagens para os experimentos; os resultados das segmentações de íris usando o algoritmo de segmentação do \textit{OSIRISv4.1}; e, por fim, são apresentados os resultados dos experimentos utilizando três índices de desempenho de sistemas de reconhecimento de íris.
 
 
 \section{Bancos de imagens} \label{sec:experimentos:db}
 
-\par Para a análise da arquitetura de sistema de reconhecimento de íris proposta com as duas métricas, \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}, foram utilizados quatro bancos de imagens de íris \textit{\acrshort{LV}}: 
+\par Para a análise da arquitetura de sistema de reconhecimento de íris proposta com as duas métricas, \textit{\acrshort{DSMI}} e \textit{\acrshort{FCE}}, foram utilizados quatro bancos de imagens de íris \textit{\acrshort{LV}} para das suas imagens as íris serem segmentadas, terem os códigos gerados e para serem efetuadas as correspondências: 
 
 \begin{enumerate}
     \item \textit{MICHE} \cite{marsico2017-MICHE-1, santada2016-MICHE-2, miche};
@@ -13,7 +13,7 @@
     \item \textit{\acrfull{Warsaw}} \cite{trokielwicz2016-Warsaw, warsaw}.
 \end{enumerate}
 
-\par De cada banco de imagens, foram selecionadas cinco imagens de 40 indivíduos aleatoriamente. Dessas cinco imagens, 2 foram reservadas para treino e 3 para teste. As imagens de treino foram utilizadas para calcular os limiares $T_{DSMI}$ e $T_{FCE}$ de cada banco de imagens. Já as imagens de teste foram utilizadas para o uso na arquitetura proposta e avaliar como as métricas de qualidade influenciaram no rendimento de sistemas de reconhecimento de íris. Foram selecionadas somente cinco imagens porque entre os bancos de imagens, é o número mínimo de imagens por indivíduo.
+\par De cada banco de imagens, foram selecionadas cinco imagens de 40 indivíduos aleatoriamente, porque era o número mínimo de indivíduos entre os bancos de imagens e o número de imagens mínimas entre os indivíduos. Dessas cinco imagens, 2 foram reservadas para treino e 3 para teste. As imagens de treino foram utilizadas para calcular os limiares $T_{DSMI}$ e $T_{FCE}$ de cada banco de imagens. Já as imagens de teste foram utilizadas para o uso na arquitetura proposta e avaliar como as métricas de qualidade influenciaram no rendimento de sistemas de reconhecimento de íris. Foram selecionadas somente cinco imagens porque entre os bancos de imagens, é o número mínimo de imagens por indivíduo.
 
 % \par De cada banco de imagens, foram selecionadas cinco imagens de 40 indivíduos aleatoriamente. Dessas cinco imagens, 2 foram reservadas para treino e 3 para teste. As imagens de treino foram utilizadas para calcular os limiares $T_{DSMI}$, $T_{FCE}$ de cada banco de imagens e o parâmetro $\beta$ da função de normalização f() (\refEq{eq:fce:normFCM}) para todos os bancos de imagens. Já as imagens de teste foram utilizadas para o uso na arquitetura proposta e avaliar como as métricas de qualidade influenciaram no rendimento de sistemas de reconhecimento de íris.
 
@@ -173,7 +173,7 @@
 
 \subsection{\textit{\acrshort{Warsaw}}}\label{sec:experimentos:db:warsaw}
 
-\par \textit{\acrshort{Warsaw}} é um banco de imagens de imagens de íris capturadas por \textit{smartphones} \cite{trokielwicz2016-Warsaw}. Tem o objetivo de propor imagens de íris de \textit{smartphones} de boa qualidade e avaliar seu rendimento em sistemas de reconhecimento de íris conhecidos. Participaram do projeto 70 voluntários, em que a captura das imagens de suas íris esquerda e direita foi dividida em duas sessões e em ambientes fechados. As imagens foram capturadas pelo \textit{smartphone} \textit{iPhone 5s} e em todas, foi utilizada a câmera traseira com \textit{flash}. No total, foram capturadas 3192 imagens de 139 e 136 íris diferentes dos 70 voluntários.
+\par \textit{\acrshort{Warsaw}} é um banco de imagens de imagens de íris capturadas por \textit{smartphones} \cite{trokielwicz2016-Warsaw}. Tem o objetivo de propor imagens de íris de \textit{smartphones} de boa qualidade e avaliar seu rendimento em sistemas de reconhecimento de íris conhecidos. Participaram do projeto 70 voluntários, em que a captura das imagens de suas íris esquerda e direita foi dividida em duas sessões e em ambientes fechados. As imagens foram capturadas pelo \textit{smartphone} \textit{iPhone 5s} e em todas, foi utilizada a câmera traseira com \textit{flash}. No total, foram capturadas 3192 imagens de 139 íris esquerdas e 136 íris direitas dos 70 voluntários.
 
 \par No projeto, foram utilizadas somente imagens da primeira sessão e os olhos foram selecionados alternadamente entre os indivíduos. Imagens da segunda sessão não foram utilizadas porque nem todos os indivíduos que participaram da primeira sessão participaram da segunda e em muitos casos, cada indivíduo só possuia de duas a quatro imagens por olho, quantidade insuficiente para os experimentos.
 
@@ -461,7 +461,7 @@
     \item \textit{\acrfull{TPR}}: Taxa de indivíduos que são corretamente aceitos pelo sistema;
     \item \textit{\acrfull{TNR}}: Taxa de indivíduos que são corretamente rejeitados pelo sistema;
     \item \textit{\acrfull{FPR}}: Taxa de indivíduos que são incorretamente aceitos pelo sistema;
-    \item \textit{\acrfull{FNR}}: Taxa de modeindivíduoslos que são incorretamente rejeitados pelo sistema.
+    \item \textit{\acrfull{FNR}}: Taxa de indivíduos que são incorretamente rejeitados pelo sistema.
 \end{enumerate}
 
 \par \textit{\acrshort{ROC}} é um gráfico comumente usado para avaliar o desempenho de sistemas de reconhecimento de íris \cite{aucROC, daugman2000}. O gráfico consiste na plotagem da \textit{\acrshort{TPR}} no eixo das ordenadas pela \textit{\acrshort{FPR}} no eixo das abcissas, que são calculadas para vários limiares de decisão. \textit{\acrshort{AUC}} é a métrica usada para avaliar o desempenho do sistema biométrico a partir do gráfico \textit{\acrshort{ROC}} e consiste em calcular a área sobre a curva do \textit{\acrshort{ROC}} \cite{aucROC}. A \textit{\acrshort{AUC}} qunatifica as aceitações e rejeições de indivíduos em sistemas biométricos. Pode resultar em valores entre 0.5 e 1, e possuem as seguintes classificações \cite{aucROC}:
@@ -589,13 +589,13 @@ A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort
 
 \subsection{\textit{\acrfull{d'}}}\label{sec:experimentos:daugman}
 
-\par O limiar de decisão do sistema biométrico que influencia nas taxa de acerto e erro nas correspondências. Quanto mais conservador, maior a \textit{\acrshort{FNR}} e quanto menos criterioso, maior a \textit{\acrshort{FPR}} \cite{daugman2000}. A quantidade de sobreposição das distribuições de aceitos e rejeitados que indica o quão boa a taxa de decisão do sistema é, porque indicam as taxas \textit{\acrshort{FPR}} e \textit{\acrshort{FNR}}. A métrica \textit{\acrshort{d'}} foi proposta de forma a calcular a separação da distribuição das íris aceitas e rejeitadas, o grau de detrimento entre as duas taxas de erro e quantificar em um valor a capacidade de decisão de um sistema de reconhecimento de íris, e é descrita pela \refEq{eq:experimentos:daugman} \cite{daugman2000}:
+\par O limiar de decisão do sistema biométrico que influencia nas taxa de acerto e erro nas correspondências. Quanto mais conservador, maior a \textit{\acrshort{FNR}} e quanto menos criterioso, maior a \textit{\acrshort{FPR}} \cite{daugman2000}. As sobreposições das distribuições das \acrlong{HD} de correspondências aceitas e rejeitadas quantificam o poder de decisão do sistema, e essas sobreposições consistem nas taxas \textit{\acrshort{FPR}} e \textit{\acrshort{FNR}}. A métrica \textit{\acrshort{d'}} foi proposta de forma a calcular a separação da distribuição das íris aceitas e rejeitadas, o grau de detrimento entre as duas taxas de erro e quantificar em um valor a capacidade de decisão de um sistema de reconhecimento de íris, e é descrita pela \refEq{eq:experimentos:daugman} \cite{daugman2000}:
 
 \equacao{eq:experimentos:daugman}{
     d' = \frac{|\mu_{1} - \mu_{2}|}{\sqrt{\frac{1}{2}(\sigma_{1}^2 + \sigma_{2}^2)}},
 }
 
-\noindent onde $\mu_{1}$ e $\mu_{2}$ são as médias das \textit{\acrshort{HD}} das íris que foram aceitas e rejeitadas, respectivamente, enquanto $\sigma_{1}^2$ e $\sigma_{2}^2$ são seus desvios padrões. Quanto maior o valor de \textit{\acrshort{d'}}, melhor o poder de decisão do sistema de reconhecimento de íris.
+\noindent onde $\mu_{1}$ e $\mu_{2}$ são as médias das \textit{\acrlong{HD}} das íris que foram aceitas e rejeitadas, respectivamente, enquanto $\sigma_{1}^2$ e $\sigma_{2}^2$ são seus desvios padrões. Quanto maior o valor de \textit{\acrshort{d'}}, melhor o poder de decisão do sistema de reconhecimento de íris.
 
 \par Nos experimentos realizados, \textit{\acrshort{d'}} foi calculado utilizando quatro limiares de decisão: $T_{1} = 0.2$, $T_{2} = 0.3$, $T_{3} = 0.4$ e $T_{EER}$. $T_{EER}$ consiste nos limiares encontrados no ponto da \textit{\acrshort{EER}}.
 % , e são enumerados na \refTab{tab:experimentos:limiar_eer}.
@@ -635,7 +635,7 @@ A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort
 \centering
 \caption{Valores calculados para \textit{\acrshort{d'}} nos experimentos.}
 \label{tab:experimentos:d:com_ruido}
-\tabcolsep=0.04cm
+\resizebox{1\textwidth}{!}{%
 \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \cline{2-17}
  & \multicolumn{4}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{4}{c|}{\textit{\textbf{Warsaw}}} \\
@@ -646,7 +646,26 @@ A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort
 \multicolumn{1}{|l|}{\textbf{FCE}} & \textbf{7.24} & \textbf{4.13} & 1.91 & 1.82 & 8.33 & 5.06 & 1.72 & 1.45 & \textbf{8.10} & \textbf{3.96} & 2.39 & 2.26 & \textbf{8.43} & \textbf{5.16} & 2.26 & 1.31 \\ \hline
 \multicolumn{1}{|l|}{\textbf{DM}} & 6.51 & 4.10 & \textbf{2.37} & \textbf{2.18} & \textbf{9.42} & \textbf{6.49} & 1.74 & 1.55 & 7.29 & 3.86 & \textbf{2.61} & \textbf{2.42} & 7.82 & 5.04 & \textbf{2.44} & \textbf{1.95} \\ \hline
 \end{tabular}
+}
+
 \end{table}
+
+% \begin{table}[h!]
+% \centering
+% \caption{Valores calculados para \textit{\acrshort{d'}} nos experimentos.}
+% \label{tab:experimentos:d:com_ruido}
+% \tabcolsep=0.04cm
+% \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+% \cline{2-17}
+%  & \multicolumn{4}{c|}{\textit{\textbf{MICHE}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv1}}} & \multicolumn{4}{c|}{\textit{\textbf{UBIRISv2}}} & \multicolumn{4}{c|}{\textit{\textbf{Warsaw}}} \\
+%  \cline{2-17} &
+% \multicolumn{1}{c|} {\textbf{$T_{1}$}} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} & \textbf{$T_{1}$} & \textbf{$T_{2}$} & \textbf{$T_{3}$} & \textbf{$T_{EER}$} \\ \hline
+% \multicolumn{1}{|l|}{\textbf{SM}} & 5.70 & 3.48 & 2.13 & 1.94 & 6.57 & 3.86 & \textbf{2.29} & \textbf{1.92} & 3.99 & 2.67 & 1.68 & 1.48 & 7.38 & 4.70 & 1.88 & 1.42 \\ \hline
+% \multicolumn{1}{|l|}{\textbf{DSMI}} & 6.10 & 3.86 & 2.34 & 2.17 & 6.74 & 4.16 & 2.21 & 1.86 & 4.09 & 2.67 & 1.62 & 1.41 & 7.62 & 4.82 & 2.06 & 1.56 \\ \hline
+% \multicolumn{1}{|l|}{\textbf{FCE}} & \textbf{7.24} & \textbf{4.13} & 1.91 & 1.82 & 8.33 & 5.06 & 1.72 & 1.45 & \textbf{8.10} & \textbf{3.96} & 2.39 & 2.26 & \textbf{8.43} & \textbf{5.16} & 2.26 & 1.31 \\ \hline
+% \multicolumn{1}{|l|}{\textbf{DM}} & 6.51 & 4.10 & \textbf{2.37} & \textbf{2.18} & \textbf{9.42} & \textbf{6.49} & 1.74 & 1.55 & 7.29 & 3.86 & \textbf{2.61} & \textbf{2.42} & 7.82 & 5.04 & \textbf{2.44} & \textbf{1.95} \\ \hline
+% \end{tabular}
+% \end{table}
 
 % \par Tanto nos experimentos sem ruído quanto com ruído, os valores do \textit{\acrshort{d'}} calculados apresentaram os melhores resultados com os menores limiares. Isso pode ser explicado porque quanto menor o limiar, menor a média dos valores da \textit{\acrshort{HD}} das comparações aceitas, e como a média das \textit{\acrshort{HD}} das comparações rejeitadas mantém-se praticamente constante, o numerador da \refEq{eq:experimentos:daugman} aumenta e os seus resultados consequentemente. As Tabelas \ref{tab:experimentos:media_sem_ruidos_daugman} e \ref{tab:experimentos:media_com_ruidos_daugman} no \refApendice{Apendice_B} enumeram as médias, variâncias e quantidade de comparações aceitas e rejeitadas calculadas para os experimentos sem ruído.
 

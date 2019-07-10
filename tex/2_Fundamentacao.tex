@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Biometria} \label{sec:fundamentacao:biometria}
 
-\par Biometria são medidas físicas ou comportamentais que identificam um indivíduo unicamente \cite{li2009encyclopedia}. Nas últimas décadas, com os avanços das tecnologias, foi possível usar essas medidas biométricas em sistemas de autenticação \cite{wayman2005biometric}. 
+\par A biometria consiste em medidas físicas ou comportamentais que identificam um indivíduo unicamente \cite{li2009encyclopedia}. Nas últimas décadas, com os avanços das tecnologias, foi possível usar essas medidas biométricas em sistemas de autenticação \cite{wayman2005biometric}. 
 
 \par As Subseções \ref{sec:fundamentacao:biometria:caracteristicas} e \ref{sec:fundamentacao:biometria:criterios} explicam quais as características biométricas existem e os critérios utilizados para determinar quais são as melhores, respectivamente. 
 
@@ -34,19 +34,19 @@ formatos. Algumas das características físicas mais utilizadas são:
     \item Íris;
     \item Rosto;
     \item Formato das mãos;
-    \item Veias das maos;
+    \item Veias das mãos;
     \item Formato da orelha;
     \item Retina.
 \end{itemize}
 
-\par Características comportamentais, são aspectos psicológicos. Como fatores que levam pessoas a praticarem atividades ou ações que as distinguem unicamente \cite{wayman2005biometric}. Alguns dos aspectos comportamentais utilizados para autenticação biométrica são:
+\par Características comportamentais são aspectos psicológicos, como fatores que levam pessoas a praticarem atividades ou ações que as distinguem unicamente \cite{wayman2005biometric}. Alguns dos aspectos comportamentais utilizados para autenticação biométrica são:
 
 \begin{itemize}
     \item Assinatura;
     \item Forma de caminhar.
 \end{itemize}
 
-\par Já características híbridas, são aspectos que envolvem tanto fatores fisiológicos quanto comportamentais, como a voz \cite{wayman2005biometric}. Tamanho e formato da boca, garganta, cavidade nasal e outros fatores físicos influenciam diretamente na frequência da voz da pessoa, mas, fatores comportamentais como humor, idioma, sotaque e saúde também são essencias para a diferenciação da voz de indivíduos.
+\par Já características híbridas, são aspectos que envolvem tanto fatores fisiológicos quanto comportamentais, como a voz \cite{wayman2005biometric}. Tamanho e formato da boca, garganta, cavidade nasal e outros fatores físicos influenciam diretamente na frequência da voz da pessoa, mas fatores comportamentais como humor, idioma, sotaque e saúde também são essenciais para a diferenciação da voz de indivíduos.
 
 \subsection{Qualidade das características biométricas} \label{sec:fundamentacao:biometria:criterios}
 
@@ -107,27 +107,43 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \figura[h!]{img/Fundamentacao/arquitetura_biometria}{Arquitetura de um sistema biométrico genérico. Linhas contínuas indicam módulos obrigatórios e linhas tracejadas indicam módulos opcionais}{fig:sis_bio:arquitetura}{width=1\textwidth}
 
-\subsection{Coleta} \label{sec:sis_bio:coleta}
+\subsection{Módulo de Coleta} \label{sec:sis_bio:coleta}
 
 \par Módulo de sistemas biométricos responsável por capturar sinais de uma característica biométrica por meio de um sensor eletrônico \cite{wayman2005biometric}. O resultado apresentado pelo sensor, que vai ser posteriormente processado, é a combinação de três fatores: a medida biométrica, a maneira com que a medida é apresentada (imagem, áudio, vídeo) e os parâmetros técnicos do sensor. Se qualquer um dos três fatores sofre modificação, o desempenho do sistema é impactado.
 
 \par A \refFig{fig:sis_bio:coleta} ilustra alguns modelos de sensores eletônicos utilizados para capturar impressões digitais e íris, respectivamente.
 
-\figurasDuplas{H}{img/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/irisaccess}{Sensores biométricos de impressão digital e íris}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:iris}{.5\textwidth}{width=.5\textwidth}}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/Fundamentacao/fingerprint_sensor}
+  \caption{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor}).}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/Fundamentacao/irisaccess}
+  \caption{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia}).}
+\end{subfigure}
+\caption{Sensores biométricos de impressão digital e íris.}
+\label{fig:sis_bio:coleta}
+\end{figure}
+
+% \figurasDuplas{H}{img/Fundamentacao/fingerprint_sensor}{img/Fundamentacao/irisaccess}{Sensores biométricos de impressão digital e íris}{Sensor \textit{Futronic FS80H} (Fonte: \cite{fingerprint_sensor})}{Sensor \textit{LG IrisAccess 4000} (Fonte: \cite{iris_sensor, li2009encyclopedia})}{fig:sis_bio:coleta}{fig:sis_bio:coleta:fingerprint}{{fig:sis_bio:coleta:iris}{.5\textwidth}{width=.5\textwidth}}
 
 \FloatBarrier
 
-\subsection{Transmissão}\label{sec:sis_bio:transmissao}
+\subsection{Módulo de Transmissão}\label{sec:sis_bio:transmissao}
 
 \par O módulo de transmissão é responsável por transmitir a característica biométrica capturada pelo sensor no módulo de \textit{Coleta} para ser processada e armazenada \cite{wayman2005biometric}. Esse módulo não precisa estar presente em todo sistema biométrico, apenas os que processam e armazenam os modelos gerados no módulo de \textit{processamento} remotamente.
 
-\par O tamanho dos dados da característica biométrica capturada podem variar, mas geralmente são grandes, podendo causar gargalos na transmissão e ocupar muito espaço de armazenamento. Portanto, técnicas de compressão de dados podem ser aplicadas, para acelerar a transmissão e reduzir o espaço de armazenamento no banco de dados. A compressão, no entanto, introduz desafios, porque causam perda da qualidade dos dados e podem influenciar diretamente nos resultados do módulo de \textit{Processamento} e, consequentemente, no módulo de \textit{Decisão}. De forma a reduzir o impacto da compressão, técnicas específicas são aplicadas para cada tipo de característica biométrica.
+\par O tamanho dos dados da característica biométrica capturada podem variar, mas geralmente são grandes, podendo causar gargalos na transmissão e ocupar muito espaço de armazenamento. Portanto, técnicas de compressão de dados podem ser aplicadas, para acelerar a transmissão e reduzir o espaço de armazenamento no banco de dados. A compressão, no entanto, introduz desafios, porque podem causar perda da qualidade dos dados e podem influenciar diretamente nos resultados do módulo de \textit{Processamento} e, consequentemente, no módulo de \textit{Decisão}. De forma a reduzir o impacto da compressão, técnicas específicas são aplicadas para cada tipo de característica biométrica.
 
-\par A \refFig{fig:sis_bio:transmissao} ilustra as imagens de uma íris e o resultado da sua compressão usando a técnica \textit{JPEG2000}. É observado que a qualidade é inferior e que certas informações e padrões são perdidos.
+% \par A \refFig{fig:sis_bio:transmissao} ilustra as imagens de uma íris e o resultado da sua compressão usando a técnica \textit{JPEG2000}. É observado que a qualidade é inferior e que certas informações e padrões são perdidos.
 
-\figurasDuplas{h!}{img/Fundamentacao/iris_original}{img/Fundamentacao/iris_comprimida}{Resultado da compressão de uma imagem de íris usando \textit{JPEG2000}}{Íris original}{Íris comprimida}{fig:sis_bio:transmissao}{fig:sis_bio:transmissao:original}{{fig:sis_bio:transmissao:comprimida}{.5\textwidth}{width=.5\textwidth}}
+% \figurasDuplas{h!}{img/Fundamentacao/iris_original}{img/Fundamentacao/iris_comprimida}{Resultado da compressão de uma imagem de íris usando \textit{JPEG2000}}{Íris original}{Íris comprimida}{fig:sis_bio:transmissao}{fig:sis_bio:transmissao:original}{{fig:sis_bio:transmissao:comprimida}{.5\textwidth}{width=.5\textwidth}}
 
-\subsection{Processamento} \label{sec:sis_bio:processamento}
+\subsection{Módulo de Processamento} \label{sec:sis_bio:processamento}
 
 \par O módulo de processamento consiste em segmentar, extrair os atributos e gerar o modelo da característica biométrica capturada no módulo de coleta \cite{wayman2005biometric}.
 
@@ -137,19 +153,36 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \par Na etapa de registro do sistema, esses \textit{templates} são salvos e associados à pessoa sendo cadastrada em algum banco de dados. Na etapa de autenticação, os \textit{templates} salvos são comparados com o \textit{template} sendo autenticado no módulo de \textit{decisão}.
 
-\figurasDuplas{h!}{img/Fundamentacao/fingerprint_segmentada}{img/Fundamentacao/iris_segmentada}{Resultados da segmentação de uma íris e impressão digital}{Impressão digital segmentada (Fonte: \cite{fingerprint_segmentada})}{Íris segmentada (Fonte: \cite{iris_segmentada})}{fig:sis_bio:processamento:segmentacao}{fig:sis_bio:processamento:segmentacao:fingerprint}{{fig:sis_bio:processamento:segmentacao:fingerprint}{.4\textwidth}{width=.4\linewidth}}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/Fundamentacao/fingerprint_segmentada}
+  \caption{Impressão digital segmentada (Fonte: \cite{fingerprint_segmentada}).}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/Fundamentacao/iris_segmentada}
+  \caption{Íris segmentada (Fonte: \cite{iris_segmentada}).}
+\end{subfigure}
+\caption{Resultados da segmentação de uma íris e impressão digital.}
+\label{fig:sis_bio:processamento:segmentacao}
+\end{figure}
 
-\subsection{Armazenamento}
+\FloatBarrier
+% \figurasDuplas{H}{img/Fundamentacao/fingerprint_segmentada}{img/Fundamentacao/iris_segmentada}{Resultados da segmentação de uma íris e impressão digital}{Impressão digital segmentada (Fonte: \cite{fingerprint_segmentada})}{Íris segmentada (Fonte: \cite{iris_segmentada})}{fig:sis_bio:processamento:segmentacao}{fig:sis_bio:processamento:segmentacao:fingerprint}{{fig:sis_bio:processamento:segmentacao:fingerprint}{.4\textwidth}{width=.4\linewidth}}
 
-\par O módulo de armazenamento é o responsável por armazenar os \textit{templates} das características biométricas geradas no registro de uma pessoa no sistema. Pode ou não, ser um banco de dados centralizado, dependendo da aplicação \cite{wayman2005biometric}.
+\subsection{Módulo de Armazenamento}
 
-\par Em sistemas que utilizam a funcionalidade de identificação, é mais comum a utilização de bancos de dados centralizados, enquanto em sistemas de verificação, é mais comum o uso de cartões para armazenar o \textit{template}.
+\par O módulo de armazenamento é o responsável por armazenar os \textit{templates} das características biométricas geradas no registro de uma pessoa no sistema. Pode ou não ser um banco de dados centralizado, dependendo da aplicação \cite{wayman2005biometric}.
 
-\subsection{Decisão} \label{sec:sis_bio:decisao}
+\par Em sistemas que utilizam a funcionalidade de identificação é mais comum a utilização de bancos de dados centralizados, enquanto em sistemas de verificação é mais comum o uso de cartões para armazenar o \textit{template}.
+
+\subsection{Módulo de Decisão} \label{sec:sis_bio:decisao}
 
 \par O módulo de decisão consiste na comparação dos \textit{templates} de características biométricas armazenadas com o \textit{template} gerado na etapa de autenticação e na decisão se há ou não correspondência para aceitar ou rejeitar a pessoa sendo autenticada no sistema \cite{wayman2005biometric}.
 
-\par A comparação pode ser feita usando métricas de diferença ou similaridade dos \textit{templates}, e varia para cada sistema. Considerando uma distância ou similaridade, a decisão é feita por meio de um limiar. O valor do limiar a ser utilizado no sistema depende da aplicação. Há aplicações de risco e que não podem permitir impostores, de forma que o limiar deve ser mais criterioso. Enquanto há aplicações que não é desejado que pessoas cadastradas sejam negadas frequentemente, e portanto, o limiar deve ser menos criterioso.
+\par A comparação pode ser feita usando métricas de diferença ou similaridade dos \textit{templates}, e varia para cada sistema. Considerando uma distância ou similaridade a decisão é feita por meio de um limiar. O valor do limiar a ser utilizado no sistema depende da aplicação. Há aplicações de risco e que não podem permitir impostores, de forma que o limiar deve ser mais criterioso. Enquanto há aplicações que não é desejado que pessoas cadastradas sejam negadas frequentemente e, portanto, o limiar pode ser menos criterioso.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,7 +190,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Processamento de Imagens no Domínio Espacial}
 
-\par Imagem digital é a representação do plano \textit{3D} em \textit{2D}, e corresponde à uma matriz de elementos, chamados \textit{pixels} \cite{gonsalez2006}. \textit{Pixels} são os menores elementos de uma imagem digital, e seus valores recebem o nome de \textit{intensidade de pixel} \cite{gonsalez2006}. Como uma imagem pertence ao plano \textit{2D}, o termo domínio espacial refere-se à própria imagem. A \refEq{eq:espacial:imagem} é a representação matemática de uma imagem, onde \textit{x} e \textit{y} são inteiros e correspondem à posição dos \textit{pixels} na matriz \cite{gonsalez2006}
+\par Imagem digital é uma representaçãp bidimensional de uma imagem, e corresponde à uma matriz de elementos, chamados \textit{pixels} \cite{gonsalez2006}. \textit{Pixels} são os menores elementos de uma imagem digital, e seus valores recebem o nome de \textit{intensidade de pixel} \cite{gonsalez2006}. Como uma imagem pertence ao plano \textit{2D}, o termo domínio espacial refere-se à própria imagem. A \refEq{eq:espacial:imagem} é a representação matemática de uma imagem, onde \textit{x} e \textit{y} são inteiros e correspondem à posição dos \textit{pixels} na matriz \cite{gonsalez2006}
 
 \equacao{eq:espacial:imagem}{I_{x,y} = 
  \begin{bmatrix}
@@ -172,7 +205,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \equacao{eq:espacial:proc_esp}{I_{saida}(x, y) = T[I_{entrada}(x, y)].}
 
-\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:otsu} detalham técnicas de processamento de imagens no domínio espacial.
+\par As Subseções \ref{sec:dom_esp:lbp} até \ref{sec:dom_esp:otsu} detalham algumas técnicas de processamento de imagens no domínio espacial que serão importantes nesse projeto.
 
 \subsection{\textit{\acrfull{LBP}}}\label{sec:dom_esp:lbp}
 
@@ -237,7 +270,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=0.6\linewidth]{img/Fundamentacao/stdfilt_var.jpg}
-  \caption{Com filtro \textit{Variância Local}}
+  \caption{Com filtro \textit{Variância Local}.}
 \end{subfigure}
 \caption{Resultados da filtragem da \refFig{fig:stdfilt:entrada} usando os filtros \textit{Desvio Padrão Local} e \textit{Variância Local}.}
 \label{fig:filtros}
@@ -321,7 +354,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \par Operação morfológica que aumenta regiões mais claras, ou diminui regiões mais escuras, da imagem de entrada \cite{gonsalez2006}. Pode ser utilizada também para calcular máximos locais de imagens.
 
-\par O elemento estrututante é sobreposto em cada um dos \textit{pixels} da imagem de entrada, o máximo local da região sobreposta é calculado, e por fim, esse máximo é atribuído à imagem de saída na \textit{posição âncora} do elemento estruturante. A \refFig{fig:processo_dilatacao} ilustra as etapas descritas acima, considerando o elemento estrututante da \refFig{fig:kernel_morfo}.
+\par O elemento estrututante é sobreposto em cada um dos \textit{pixels} da imagem de entrada, o máximo local da região sobreposta é calculado, e, por fim, esse máximo é atribuído à imagem de saída na \textit{posição âncora} do elemento estruturante. A \refFig{fig:processo_dilatacao} ilustra as etapas descritas acima, considerando o elemento estrututante da \refFig{fig:kernel_morfo}.
 
 \figura[!h]{img/Fundamentacao/dilatacao}{Resultado da etapa de dilatação. A matriz 3x3 centralizada corresponde ao elemento estrututante e o elemento sublinhado ao \textit{ponto âncora} substituído pelo máximo valor da região sobreposta}{fig:processo_dilatacao}{width=0.4\textwidth}
 
@@ -383,7 +416,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \section{Sistemas Biométricos de Íris}
 
-\par Sistemas biométricos de íris são sistemas que utilizam algoritmos de reconhecimento de íris para autenticação biométrica. Íris possuem inúmeras vantagens e desvantagens para seu uso, como listadas abaixo \cite{advantagesDaugman}:
+\par Sistemas biométricos de íris são sistemas que utilizam algoritmos de reconhecimento de íris para autenticação biométrica. O uso de íris possuem inúmeras vantagens e desvantagens para seu uso, como listadas abaixo \cite{advantagesDaugman}:
 
 \par Vantagens: 
 
@@ -411,7 +444,7 @@ formatos. Algumas das características físicas mais utilizadas são:
 
 \figuraBib[!h]{img/Fundamentacao/olho-humano}{Anatomia de um olho humano}{imgOlhoHumano}{fig:olhohumano}{width=0.4\textwidth}%
 
-\par A íris apresenta alta variedade de padrões e colorações, que podem variar do azul, castanho, verde, avelã até o cinza. A cor da íris é definida geneticamente, enquanto os padrões não \cite{adlerIris2003}. A íris do olho esquerdo de um indivíduo é necessariamente diferente da do olho direito \cite{wayman2005biometric}. Essa diferença é ilustrada nas \refFigs{fig:iris_direita}{fig:iris_esquerda}.
+\par A íris apresenta alta variedade de padrões e colorações, que podem variar do azul, castanho, verde, avelã até o cinza. A cor da íris é definida geneticamente, enquanto os padrões são desenvolvidos durante a gestação \cite{daugman2004, adlerIris2003}. A íris do olho esquerdo de um indivíduo é necessariamente diferente da do olho direito \cite{wayman2005biometric}. Essa diferença é ilustrada nas \refFigs{fig:iris_direita}{fig:iris_esquerda}.
 
 \par Com a probabilidade de 1 em $10^{72}$ de existirem padrões de íris iguais e não modificarem ao longo da vida, é considerada um dos melhores tipos de biometria \cite{iris_UFRJ}.
 
@@ -502,9 +535,9 @@ Imagens \textit{\arcshort{LV}} são imagens capturadas por aparelhos, como câme
     OID = max_{(r,x_{0},y_{0})}\Big|G_{\sigma}(r)*\frac{\partial}{\partial r}\oint_{r,x_{0},y_{0}}\frac{I(x,y)}{2 \pi r}ds\Big|,
 }
 
-\noindent e é aplicado por toda a imagem até que um formato circular é encontrado, onde $I(x,y$) é a imagem com um olho humano, $2\pi r$ o contorno da imagem, $r$ e $(x_{0}, y_{0})$ o raio e a posição do central da imagem inicialmente e $G_{\sigma}$ é um filtro \textit{Gaussiano} usado para suavizar ruídos.
+\noindent e é aplicado por toda a imagem até que um formato circular é encontrado, onde $I(x,y$) é a imagem com um olho humano, $\frac{\partial}{\partial r}$ a derivada parcial com relação aos valores do raio, $\oint_{r,x_{0},y_{0}}$ a integral de superfície para encontrar o formato circular, $2\pi r$ o contorno da imagem, $r$ e $(x_{0}, y_{0})$ o raio e a posição do central da imagem inicialmente e $G_{\sigma}$ é um filtro \textit{Gaussiano} usado para suavizar ruídos.
 
-\par O passo de normalização é feito de forma a transformar a imagem da íris segmentada para dimensões fixas e para a extração dos atributos, e geralmente consiste na utilização do \textit{Modelo Rubber Sheet} \cite{daugman2004}. Esse modelo transforma a imagem da íris segmentada das coordenadas cartesianas para polares $(x,y) \mapsto (\rho,\theta)$. A \refFig{fig:rubber_sheet} ilustra o procedimento realizado pelo \textit{Modelo Rubber Sheet} e a \refFig{fig:normalizada} uma imagem de íris normalizada com esse modelo. Nessa etapa, uma máscara binária da imagem normalizada também é gerada, de forma a separar íris de ruídos e ser utilizada no módulo de \textit{decisão}.
+\par O passo de normalização é feito de forma a transformar a imagem da íris segmentada para dimensões fixas e para a extração dos atributos e, geralmente, consiste na utilização do \textit{Modelo Rubber Sheet} \cite{daugman2004}. Esse modelo transforma a imagem da íris segmentada das coordenadas cartesianas para polares $(x,y) \mapsto (\rho,\theta)$. A \refFig{fig:rubber_sheet} ilustra o procedimento realizado pelo \textit{Modelo Rubber Sheet} e a \refFig{fig:normalizada} uma imagem de íris normalizada com esse modelo. Nessa etapa, uma máscara binária da imagem normalizada também é gerada, de forma a separar íris de ruídos e ser utilizada no módulo de \textit{decisão}.
 
 \figuraBib[h!]{img/Fundamentacao/rubber_sheet}{Procedimento do \textit{Modelo Rubber Sheet}}{rubberSheet}{fig:rubber_sheet}{width=0.4\textwidth}
 
