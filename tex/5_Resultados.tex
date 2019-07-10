@@ -445,11 +445,11 @@
     \item \acrfull{DM}: Arquitetura proposta no projeto (\refFig{fig:metodologia:arquitetura}).
 \end{itemize}
 
-\par Para avaliar o desempenho dos quatro experimentos, os seguintes índices foram utilizadas:
+\noindent Como foram utilizadas as imagens dos bancos de imagens e não imagens capturadas em tempo real, os experimentos com métricas de qualidade não consistiram em rejeitar imagens e solicitar por novas, como descrito na arquitetura proposta. Ao invés de rejeitá-las, as imagens simplesmente eram descartadas dos cálculos de rendimento em cada um dos experimentos realizados. Para avaliar o desempenho dos quatro experimentos, os seguintes índices foram utilizados:
 
 \begin{itemize}
     \item \textit{\acrfull{AUC}} e \textit{\acrfull{ROC}} \cite{d33BEAT, aucROC, daugman2000};
-    \item \textit{\acrfull{EER}} \cite{eer,d33BEAT};
+    \item \textit{\acrfull{EER}} \cite{d33BEAT, eer};
     \item \textit{\acrfull{d'}} \cite{daugman2000}.
 \end{itemize}
 
@@ -474,7 +474,7 @@
     \item Excelente: 0.9 até 1.
 \end{itemize}
 
-A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort{ROC}} e suas \textit{\acrshort{AUC}} calculadas para os experimentos.
+\noindent A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort{ROC}} e suas \textit{\acrshort{AUC}} calculadas para os experimentos.
 
 \begin{figure}[H]
     \centering % <-- added
@@ -504,9 +504,9 @@ A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort
 
 \par No banco de imagens \textit{\acrshort{Warsaw}}, a arquitetura proposta com as duas métricas obteve a melhor \textit{\acrshort{AUC}}. O resultado encontrado com a arquitetura proposta no experimento é excelente \cite{aucROC}, porque apresenta \textit{\acrshort{AUC}} no intervalos 0.9 a 1.
 
-\par Nos bancos de imagens \textit{UBIRISv1} e \textit{UBIRISv2}, a arquitetura proposta obteve os melhores resultados no experimento. A \textit{\acrshort{AUC}} calculada no \textit{UBIRISv1} foi excelente e apresentou valor entre 0.9 e 1 \cite{aucROC}. Apesar da arquitetura proposta ter apresentado o melhor resultado no experimento do \textit{UBIRISv2}, a \textit{\acrshort{AUC}} calculada foi pobre \cite{aucROC}, apresentando valores entre 0.6 e 0.7.
+\par Nos bancos de imagens \textit{UBIRISv1} e \textit{UBIRISv2}, a arquitetura proposta obteve os melhores resultados no experimento. A \textit{\acrshort{AUC}} calculada no \textit{UBIRISv1} foi excelente e apresentou valor entre 0.9 e 1 \cite{aucROC}, e pode-se observar que melhorou consideravelmente em relação aos outros três experimentos. Apesar da arquitetura proposta ter apresentado o melhor resultado no experimento do \textit{UBIRISv2}, não foi tão superior quanto aos calculados nos outros três experimentos e a \textit{\acrshort{AUC}} calculada foi pobre \cite{aucROC}, apresentando valores entre 0.6 e 0.7.
 
-\par Portanto, pelas \textit{\acrshort{AUC}} calculados, pode-se afirmar que com pelo menos uma métrica de qualidade, o desempenho de sistemas de reconhecimento de íris é melhorado, onde em um banco de imagens usando somente a métrica de qualidade \textit{\acrshort{DSMI}} obteve o melhor resultado e nos outros três bancos de imagens a arquitetura proposta obteve os melhores resultados. 
+\par Portanto, pelas \textit{\acrshort{AUC}} calculados, pode-se afirmar que com pelo menos uma métrica de qualidade, o desempenho de sistemas de reconhecimento de íris é melhorado, onde em um banco de imagens usando somente a métrica de qualidade \textit{\acrshort{DSMI}} obteve o melhor resultado e nos outros três bancos de imagens a arquitetura proposta obteve os melhores resultados, em especial nos bancos de imagens \textit{UBIRISv1} e \textit{\acrshort{Warsaw}}, em que a arquitetura melhorou consideravelmente o desempenho de sistemas de reconhecimento de íris. 
 
 \FloatBarrier
 
@@ -567,7 +567,7 @@ A \refFig{fig:experimentos:roc_comruidos} ilustra os gráficos \textit{\acrshort
 
 \par A arquitetura proposta, assim como na métrica \textit{\acrshort{AUC}}, apresentou os melhores resultados nos bancos de imagens \textit{UBIRISv1} e \textit{UBIRISv2}. E assim como os resultados de \textit{\acrshort{AUC}}, o valor apresentado no \textit{UBIRISv2} é considerado fraco, porque é uma \textit{\acrshort{EER}} elevada e no \textit{UBIRISv1} é excelente, com valor perto de 0 \cite{eer, d33BEAT}.
 
-\par A arquitetura proposta obteve os melhores resultados em três dos quatro bancos de imagens e usando a métrica de qualidade \textit{\acrshort{DSMI}} no outro. Pode-se afirmar pelos resultados das \textit{\acrshort{EER}}, portanto, que métricas de qualidade influenciam no desempenho de sistemas de reconhecimento de íris.
+\par A arquitetura proposta obteve os melhores resultados em três dos quatro bancos de imagens e usando a métrica de qualidade \textit{\acrshort{DSMI}} no outro, onde nos bancos de imagens \textit{UBIRISv1} e \textit{\acrshort{Warsaw}} a arquitetura melhorou o rendimento consideravelmente em relação aos outros experimentos. Pode-se afirmar pelos resultados das \textit{\acrshort{EER}}, portanto, que utilizar pelo menos uma métrica de qualidade influencia no desempenho de sistemas de reconhecimento de íris.
 
 % \begin{table}[h!]
 % \centering
